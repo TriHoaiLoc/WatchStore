@@ -9,7 +9,6 @@ using System.Windows.Forms;
 
 namespace Project_QUANLYCUAHANGDONGHO.Modify
 {
-<<<<<<< HEAD
     internal class DBConnection
     {
         private SqlConnection connection;
@@ -99,24 +98,4 @@ namespace Project_QUANLYCUAHANGDONGHO.Modify
             }
         }
     }
-=======
-    public class ConnectDB                      
-    {
-      
-        public static SqlConnection Connect()
-        {
-            string strconn = @"Data Source=KE-INIZUKO\SQLEXPRESS;Initial Catalog=WatchStore;Integrated Security=True";
-            SqlConnection conn= new SqlConnection(strconn);
-            return conn;
-        }
-    //    public void Dataconect()
-    //     {
-    //        str = @"Data Source=KE-INIZUKO\SQLEXPRESS;Initial Catalog=WatchStore;Integrated Security=True";
-    //    }
-    //public SqlConnection getconnect()
-    //{
-    //    return new SqlConnection(str);
-    //}
-       }
->>>>>>> e37f5c34c636489248faf6a4decc1a69d33b3dc8
 }

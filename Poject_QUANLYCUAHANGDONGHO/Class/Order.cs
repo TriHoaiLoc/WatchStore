@@ -8,7 +8,6 @@ namespace Project_QUANLYCUAHANGDONGHO.Class
 {
     internal class Order
     {
-<<<<<<< HEAD
         private string id;
         private string empid;
         private string cusid;
@@ -33,14 +32,5 @@ namespace Project_QUANLYCUAHANGDONGHO.Class
         public string Cusid { get => cusid; set => cusid = value; }
         public DateTime Date { get => date; set => date = value; }
         public int Total { get => total; set => total = value; }
-=======
-        public int ID { get; set; }
-        public int OrderID { get; set; }
-        public int EmployeeID { get; set; }
-        public int CustomerID { get; set; }
-        public int OrderDate { get; set; }
-        public int Total { get; set; }
-
->>>>>>> e37f5c34c636489248faf6a4decc1a69d33b3dc8
     }
 }
