@@ -14,7 +14,7 @@ namespace Project_QUANLYCUAHANGDONGHO
     
     public partial class FormMain : Form
     {
-        string sqlstring = @"Data Source=KE-INIZUKO\SQLEXPRESS;Initial Catalog=QL_CUAHANGDONGHO;Integrated Security=True";
+        string sqlstring = @"Data Source=KE-INIZUKO\SQLEXPRESS;Initial Catalog=WatchStore;Integrated Security=True";
         SqlConnection sqlCon = null;
        
       

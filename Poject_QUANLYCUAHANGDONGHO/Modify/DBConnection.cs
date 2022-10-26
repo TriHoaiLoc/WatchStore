@@ -12,7 +12,7 @@ namespace Project_QUANLYCUAHANGDONGHO
         string str;
         public void Dataconect()
          {
-            str = @"Data Source = KE-INIZUKO\\SQLEXPRESS; Initial Catalog = QL_CUAHANGDONGHO; Integrated Security = True";
+            str = @"Data Source=KE-INIZUKO\SQLEXPRESS;Initial Catalog=WatchStore;Integrated Security=True";
         }
     public SqlConnection getconnect()
     {
