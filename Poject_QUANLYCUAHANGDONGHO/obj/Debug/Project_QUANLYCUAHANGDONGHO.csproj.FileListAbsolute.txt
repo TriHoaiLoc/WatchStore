@@ -19,3 +19,13 @@ F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\o
 F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.csproj.CoreCompileInputs.cache
 F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.exe
 F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.pdb
+C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\bin\Debug\Project_QUANLYCUAHANGDONGHO.exe.config
+C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\bin\Debug\Project_QUANLYCUAHANGDONGHO.exe
+C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\bin\Debug\Project_QUANLYCUAHANGDONGHO.pdb
+C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.csproj.AssemblyReference.cache
+C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormMain.resources
+C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.Properties.Resources.resources
+C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.csproj.GenerateResource.cache
+C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.csproj.CoreCompileInputs.cache
+C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.exe
+C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.pdb
