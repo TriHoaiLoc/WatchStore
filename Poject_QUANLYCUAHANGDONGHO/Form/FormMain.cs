@@ -20,7 +20,7 @@ namespace Project_QUANLYCUAHANGDONGHO
       
         public FormMain()
         {
-
+            sqlCon = new SqlConnection(sqlstring);
             /*if (sqlCon == null)
             {
                 sqlCon = new SqlConnection(sqlstring);
@@ -41,19 +41,19 @@ namespace Project_QUANLYCUAHANGDONGHO
             SqlDataReader reader = null;
 
 
-            if (sqlCon == null)
-            {
-                sqlCon = new SqlConnection(sqlstring);
+            //if (sqlCon == null)
+            //{
+            //    sqlCon = new SqlConnection(sqlstring);
 
 
-            }
-            if (sqlCon.State == ConnectionState.Closed)
-            {
-                sqlCon.Open();
-                //  MessageBox.Show("Connected Sucessfully");
+            //}
+            //if (sqlCon.State == ConnectionState.Closed)
+            //{
+            //    sqlCon.Open();
+            //    //  MessageBox.Show("Connected Sucessfully");
 
-            }
-
+            //}
+            sqlCon.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = sqlCon;
             cmd.CommandText = "FIND_CUS";
@@ -74,6 +74,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             {
                 MessageBox.Show("KHÔNG THẤY");
             }
+            //01919331
 
             reader.Close();
             sqlCon.Close();

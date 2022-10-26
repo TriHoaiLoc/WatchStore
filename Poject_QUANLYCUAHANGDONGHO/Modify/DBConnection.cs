@@ -7,16 +7,22 @@ using System.Data.SqlClient;
 
 namespace Project_QUANLYCUAHANGDONGHO
 {
-    internal class ConnectDB
+    public class ConnectDB                      
     {
-        string str;
-        public void Dataconect()
-         {
-            str = @"Data Source=KE-INIZUKO\SQLEXPRESS;Initial Catalog=WatchStore;Integrated Security=True";
+      
+        public static SqlConnection Connect()
+        {
+            string strconn = @"Data Source=KE-INIZUKO\SQLEXPRESS;Initial Catalog=WatchStore;Integrated Security=True";
+            SqlConnection conn= new SqlConnection(strconn);
+            return conn;
         }
-    public SqlConnection getconnect()
-    {
-        return new SqlConnection(str);
-    }
-}
+    //    public void Dataconect()
+    //     {
+    //        str = @"Data Source=KE-INIZUKO\SQLEXPRESS;Initial Catalog=WatchStore;Integrated Security=True";
+    //    }
+    //public SqlConnection getconnect()
+    //{
+    //    return new SqlConnection(str);
+    //}
+       }
 }
