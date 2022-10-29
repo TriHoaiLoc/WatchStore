@@ -17,6 +17,7 @@ namespace Project_QUANLYCUAHANGDONGHO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new FormMain());
             Application.Run(new FormLogin());
         }
     }
