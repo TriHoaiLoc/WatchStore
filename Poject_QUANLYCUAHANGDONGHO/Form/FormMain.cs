@@ -24,8 +24,8 @@ namespace Project_QUANLYCUAHANGDONGHO
         }
         private void ShowProduct()
         {
-            /*ProductDAO productDAO = new ProductDAO();
-            dataGridView1.DataSource = productDAO.ShowProduct();*/
+            ProductDAO productDAO = new ProductDAO();
+            dataGridView1.DataSource = productDAO.ShowProduct();
         }
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
