@@ -77,6 +77,12 @@
     <Compile Include="Class\ProductColor.cs" />
     <Compile Include="Class\ProductSize.cs" />
     <Compile Include="DAO\ProductDAO.cs" />
+    <Compile Include="Form\FormEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormEmployee.designer.cs">
+      <DependentUpon>FormEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\FormProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,10 +107,6 @@
     <Compile Include="Form\FormCustomer.Designer.cs">
       <DependentUpon>FormCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FormEmployee.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FormEmployee.designer.cs" />
     <Compile Include="Form\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +138,9 @@
     </Compile>
     <Compile Include="main\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form\FormEmployee.resx">
+      <DependentUpon>FormEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\FormAccount.resx">
       <DependentUpon>FormAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,7 +150,6 @@
     <EmbeddedResource Include="Form\FormCustomer.resx">
       <DependentUpon>FormCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FormEmployee.resx" />
     <EmbeddedResource Include="Form\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>

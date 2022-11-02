@@ -23,6 +23,18 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
             string query = "SHOW_EMPLOYEE";
             return conn.ExecuteReader(query);
         }
+
+        public DataTable FindEmployee(string name)
+        {
+            string query = "FIND_EMPLOYEE";
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@NAME", SqlDbType.NVarChar, 50) { Value = name}
+        };
+            return conn.ExecuteReader(query, parameters);
+        }
+
+
         public void AddEmployee(string name, string gender, string dob, string phone, string addr, string email, string jobid)
         {
             string query = "ADD_EMPLOYEE";

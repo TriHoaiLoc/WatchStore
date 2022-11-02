@@ -289,6 +289,17 @@ select * from Customers
 select * from OrderDetails
 select * from Products
 
+----====== TÌM KIẾM NHÂN VIÊN THEO TÊN======------------------
+GO
+CREATE PROC FIND_EMPLOYEE
+@NAME NVARCHAR(50)
+AS
+BEGIN
+	SELECT EmployeeName, EmployeeGender, EmployeeDoB,EmployeePhone,EmployeeAddress,EmployeeEmail,JobID
+	FROM Employees
+	WHERE  @NAME = EmployeeName
+END
+GO
 
 
 --delete from OrderDetails where OrderDetailID ='ORDDE2'

@@ -72,3 +72,20 @@ C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poje
 C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.pdb
 F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.Form.FormEmployee.resources
 F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormProduct.resources
+D:\gifPro\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.csproj.AssemblyReference.cache
+D:\gifPro\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormAccount.resources
+D:\gifPro\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormAdmin.resources
+D:\gifPro\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormCustomer.resources
+D:\gifPro\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormLogin.resources
+D:\gifPro\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormMain.resources
+D:\gifPro\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormOrder.resources
+D:\gifPro\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormProduct.resources
+D:\gifPro\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.Properties.Resources.resources
+D:\gifPro\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.csproj.GenerateResource.cache
+D:\gifPro\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.csproj.CoreCompileInputs.cache
+D:\gifPro\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.exe
+D:\gifPro\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.pdb
+D:\gifPro\WatchStore\Poject_QUANLYCUAHANGDONGHO\bin\Debug\Project_QUANLYCUAHANGDONGHO.exe.config
+D:\gifPro\WatchStore\Poject_QUANLYCUAHANGDONGHO\bin\Debug\Project_QUANLYCUAHANGDONGHO.exe
+D:\gifPro\WatchStore\Poject_QUANLYCUAHANGDONGHO\bin\Debug\Project_QUANLYCUAHANGDONGHO.pdb
+D:\gifPro\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormEmployee.resources

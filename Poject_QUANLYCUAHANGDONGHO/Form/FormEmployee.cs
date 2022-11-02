@@ -73,6 +73,12 @@ namespace Project_QUANLYCUAHANGDONGHO
             employeeDAO.DelEmployee(txtemplid.Text);
             ShowEmployee();
         }
+
+        private void butsearchempl_Click(object sender, EventArgs e)
+        {
+            EmployeeDAO employeeDAO = new EmployeeDAO();
+            dataGridView3.DataSource = employeeDAO.FindEmployee(txtboxempl.Text);
+        }
     }
    
 }

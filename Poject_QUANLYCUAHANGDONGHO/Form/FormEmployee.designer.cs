@@ -280,6 +280,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.butsearchempl.TabIndex = 5;
             this.butsearchempl.Text = "Tìm";
             this.butsearchempl.UseVisualStyleBackColor = true;
+            this.butsearchempl.Click += new System.EventHandler(this.butsearchempl_Click);
             // 
             // dataGridView3
             // 
