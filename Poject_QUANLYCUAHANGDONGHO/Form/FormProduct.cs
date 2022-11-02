@@ -241,7 +241,7 @@ namespace Project_QUANLYCUAHANGDONGHO
         private void bt_deleteProduct_Click(object sender, EventArgs e)
         {
             ProductDAO productDAO = new ProductDAO();
-            productDAO.DeleteProduct(r.Cells[1].Value.ToString());
+            productDAO.DeleteProduct(r.Cells[0].Value.ToString());
             ShowProduct1();
         }
 

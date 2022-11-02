@@ -13,9 +13,9 @@ namespace Project_QUANLYCUAHANGDONGHO.Modify
     {
         private SqlConnection connection;
         //private string conString = "Data Source=DESKTOP-PF86IMK;Initial Catalog=WatchStore;Integrated Security=True";  //Connection String
-        //private string conString = @"Data Source=KE-INIZUKO\SQLEXPRESS;Initial Catalog=WatchStore;Integrated Security=True";
+        private string conString = @"Data Source=KE-INIZUKO\SQLEXPRESS;Initial Catalog=WatchStore;Integrated Security=True";
         //private string conString = @"Data Source=LAPTOP-SSV3A0IL\SQLEXPRESS;Initial Catalog=WatchStore;Integrated Security=True";
-        private string conString = @"Data Source=ENFER;Initial Catalog=WatchStore;Integrated Security=True";
+       // private string conString = @"Data Source=ENFER;Initial Catalog=WatchStore;Integrated Security=True";
         public DBConnection()
         {
             connection = new SqlConnection(conString);

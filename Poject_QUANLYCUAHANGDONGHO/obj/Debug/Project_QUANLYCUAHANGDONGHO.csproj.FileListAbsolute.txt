@@ -70,3 +70,5 @@ C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poje
 C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.csproj.CoreCompileInputs.cache
 C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.exe
 C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.pdb
+F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.Form.FormEmployee.resources
+F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormProduct.resources
