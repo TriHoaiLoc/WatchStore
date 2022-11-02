@@ -36,3 +36,19 @@ F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\o
 F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormCustomer.resources
 F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormLogin.resources
 F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormOrder.resources
+D:\gifPro\project\WatchStore\Poject_QUANLYCUAHANGDONGHO\bin\Debug\Project_QUANLYCUAHANGDONGHO.exe.config
+D:\gifPro\project\WatchStore\Poject_QUANLYCUAHANGDONGHO\bin\Debug\Project_QUANLYCUAHANGDONGHO.exe
+D:\gifPro\project\WatchStore\Poject_QUANLYCUAHANGDONGHO\bin\Debug\Project_QUANLYCUAHANGDONGHO.pdb
+D:\gifPro\project\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.csproj.AssemblyReference.cache
+D:\gifPro\project\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormAccount.resources
+D:\gifPro\project\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormAdmin.resources
+D:\gifPro\project\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormCustomer.resources
+D:\gifPro\project\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.Form.FormEmployee.resources
+D:\gifPro\project\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormLogin.resources
+D:\gifPro\project\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormMain.resources
+D:\gifPro\project\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormOrder.resources
+D:\gifPro\project\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.Properties.Resources.resources
+D:\gifPro\project\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.csproj.GenerateResource.cache
+D:\gifPro\project\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.csproj.CoreCompileInputs.cache
+D:\gifPro\project\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.exe
+D:\gifPro\project\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.pdb

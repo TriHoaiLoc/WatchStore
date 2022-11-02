@@ -138,5 +138,11 @@ namespace Project_QUANLYCUAHANGDONGHO
             formMain.ShowDialog();
             this.Show();
         }
+
+        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormEmployee formEmployee = new FormEmployee();
+            formEmployee.ShowDialog();
+        }
     }
 }

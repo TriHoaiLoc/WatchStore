@@ -18,5 +18,53 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
         {
             conn = new DBConnection();
         }
+        public DataTable ShowEmployee()
+        {
+            string query = "SHOW_EMPLOYEE";
+            return conn.ExecuteReader(query);
+        }
+        public void AddEmployee(string name, string gender, string dob, string phone, string addr, string email, string jobid)
+        {
+            string query = "ADD_EMPLOYEE";
+            SqlParameter[] parameters =
+                {
+                new SqlParameter("@NAME", SqlDbType.NVarChar, 50) { Value = name},
+                new SqlParameter("@GENDER", SqlDbType.NVarChar, 10) { Value = gender},
+                new SqlParameter("@DOB", SqlDbType.DateTime) { Value = dob},
+                new SqlParameter("@PHONE", SqlDbType.NVarChar, 20) { Value = phone},
+                new SqlParameter("@ADDRESS", SqlDbType.NVarChar, 50) { Value = addr},
+                new SqlParameter("@EMAIL", SqlDbType.NVarChar, 50) { Value = email},
+                new SqlParameter("@JOBID", SqlDbType.NVarChar, 10) { Value = jobid}
+                };
+            //cmd.Parameters.Add(new SqlParameter("@Name", TextBox1));
+            conn.ExecuteNonQuery(query, parameters);
+        }
+        public void EditEmployee(string id, string name, string gender, string dob, string phone, string addr, string email, string jobid)
+        {
+            string query = "UPDATE_EMPLOYEE";
+            SqlParameter[] parameters =
+                {
+                new SqlParameter("@EMPID", SqlDbType.NVarChar, 10) { Value = id},
+                new SqlParameter("@NAME", SqlDbType.NVarChar, 50) { Value = name},
+                new SqlParameter("@GENDER", SqlDbType.NVarChar, 10) { Value = gender},
+                new SqlParameter("@DOB", SqlDbType.DateTime) { Value = dob},
+                new SqlParameter("@PHONE", SqlDbType.NVarChar, 20) { Value = phone},
+                new SqlParameter("@ADDRESS", SqlDbType.NVarChar, 50) { Value = addr},
+                new SqlParameter("@EMAIL", SqlDbType.NVarChar, 50) { Value = email},
+                new SqlParameter("@JOBID", SqlDbType.NVarChar, 10) { Value = jobid}
+                };
+            //cmd.Parameters.Add(new SqlParameter("@Name", TextBox1));
+            conn.ExecuteNonQuery(query, parameters);
+        }
+        public void DelEmployee(string txtcusid)
+        {
+            string query = "DELETE_EMPLOYEE";
+            SqlParameter[] parameters =
+                {
+                new SqlParameter("@ID", SqlDbType.NVarChar, 10) { Value = txtcusid},
+                };
+            //cmd.Parameters.Add(new SqlParameter("@Name", TextBox1));
+            conn.ExecuteNonQuery(query, parameters);
+        }
     }
 }
