@@ -17,5 +17,47 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
         {
             conn = new DBConnection();
         }
+        public void createOrder(string idcus, string empid)
+        {
+            string query = "CREATE_RECEIPT";
+            SqlParameter[] parameters =
+                {
+            new SqlParameter("@idcus", SqlDbType.NVarChar, 50) { Value = idcus },
+            new SqlParameter("@EMPID", SqlDbType.NVarChar, 10) { Value = empid }
+                };
+            // SqlParameter[] para = [ user, password ];
+            conn.ExecuteScalar(query, parameters);
+
+        }
+        public DataTable showLastOrder()
+        {
+            string query = "SELECT_NEW_ORDER";
+
+
+            return conn.ExecuteReader(query);
+        }
+        public void ThanhToan(string orderID)
+        {
+            string query = "THANHTOAN";
+            SqlParameter[] parameters =
+               {
+            new SqlParameter("@ORDERID", SqlDbType.NVarChar, 10) { Value = orderID } };
+            conn.ExecuteNonQuery(query, parameters);
+        }
+        public DataTable showAllOrder()
+        {
+            string query = "SHOW_Order";  
+            return conn.ExecuteReader(query);
+        }
+        public void cancelOrder(string orderID)
+        {
+            string query = "DELETE_RECEPIT";
+            SqlParameter[] parameters =
+              {
+            new SqlParameter("@ORDERID", SqlDbType.NVarChar, 10) { Value = orderID } };
+            conn.ExecuteNonQuery(query, parameters);
+        }
+        
+
     }
 }

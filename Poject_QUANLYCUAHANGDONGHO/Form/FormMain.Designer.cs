@@ -35,26 +35,48 @@
             this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_CusID = new System.Windows.Forms.TextBox();
+            this.txt_phone = new System.Windows.Forms.TextBox();
+            this.txt_NameCus = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_FindCus = new System.Windows.Forms.Button();
+            this.txt_FindCus = new System.Windows.Forms.TextBox();
+            this.btn_addOrder = new System.Windows.Forms.Button();
+            this.txt_CusIDORder = new System.Windows.Forms.TextBox();
+            this.txt_empId = new System.Windows.Forms.TextBox();
+            this.txt_OrderID = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.listCart = new System.Windows.Forms.ListView();
+            this.dtg_OrderDetail = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.bt_cancel = new System.Windows.Forms.Button();
             this.bt_pay = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.num_quantity = new System.Windows.Forms.NumericUpDown();
-            this.bt_addCart = new System.Windows.Forms.Button();
-            this.cb_color = new System.Windows.Forms.ComboBox();
-            this.cb_size = new System.Windows.Forms.ComboBox();
-            this.cb_Category = new System.Windows.Forms.ComboBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_addOrderDetail = new System.Windows.Forms.Button();
+            this.txt_IDproductDetail = new System.Windows.Forms.TextBox();
+            this.labelOrder = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.danhSáchHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num_quantity)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_OrderDetail)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_quantity)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -63,7 +85,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.adminToolStripMenuItem,
             this.kháchHàngToolStripMenuItem,
-            this.thôngTinTàiKhoảnToolStripMenuItem});
+            this.thôngTinTàiKhoảnToolStripMenuItem,
+            this.danhSáchHóaĐơnToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1083, 28);
@@ -95,51 +118,227 @@
             // thôngTinCáNhânToolStripMenuItem
             // 
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
             this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.btn_addOrder);
+            this.panel1.Controls.Add(this.txt_CusIDORder);
+            this.panel1.Controls.Add(this.txt_empId);
+            this.panel1.Controls.Add(this.txt_OrderID);
             this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(16, 33);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(589, 826);
             this.panel1.TabIndex = 1;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txt_CusID);
+            this.groupBox1.Controls.Add(this.txt_phone);
+            this.groupBox1.Controls.Add(this.txt_NameCus);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.btn_FindCus);
+            this.groupBox1.Controls.Add(this.txt_FindCus);
+            this.groupBox1.Location = new System.Drawing.Point(3, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(583, 125);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông tin khách hàng";
+            // 
+            // txt_CusID
+            // 
+            this.txt_CusID.Location = new System.Drawing.Point(180, 99);
+            this.txt_CusID.Name = "txt_CusID";
+            this.txt_CusID.ReadOnly = true;
+            this.txt_CusID.Size = new System.Drawing.Size(100, 22);
+            this.txt_CusID.TabIndex = 3;
+            // 
+            // txt_phone
+            // 
+            this.txt_phone.Location = new System.Drawing.Point(407, 69);
+            this.txt_phone.Name = "txt_phone";
+            this.txt_phone.ReadOnly = true;
+            this.txt_phone.Size = new System.Drawing.Size(100, 22);
+            this.txt_phone.TabIndex = 3;
+            // 
+            // txt_NameCus
+            // 
+            this.txt_NameCus.Location = new System.Drawing.Point(180, 66);
+            this.txt_NameCus.Name = "txt_NameCus";
+            this.txt_NameCus.ReadOnly = true;
+            this.txt_NameCus.Size = new System.Drawing.Size(100, 22);
+            this.txt_NameCus.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(310, 69);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 16);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Số điện thoại: ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(60, 102);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 16);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Mã Khách hàng:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(37, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(122, 16);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Nhập số điện thoại:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(122, 72);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 16);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Tên: ";
+            // 
+            // btn_FindCus
+            // 
+            this.btn_FindCus.Location = new System.Drawing.Point(383, 27);
+            this.btn_FindCus.Name = "btn_FindCus";
+            this.btn_FindCus.Size = new System.Drawing.Size(75, 23);
+            this.btn_FindCus.TabIndex = 1;
+            this.btn_FindCus.Text = "Tìm";
+            this.btn_FindCus.UseVisualStyleBackColor = true;
+            this.btn_FindCus.Click += new System.EventHandler(this.btn_FindCus_Click);
+            // 
+            // txt_FindCus
+            // 
+            this.txt_FindCus.Location = new System.Drawing.Point(180, 28);
+            this.txt_FindCus.Name = "txt_FindCus";
+            this.txt_FindCus.Size = new System.Drawing.Size(197, 22);
+            this.txt_FindCus.TabIndex = 0;
+            // 
+            // btn_addOrder
+            // 
+            this.btn_addOrder.Location = new System.Drawing.Point(450, 144);
+            this.btn_addOrder.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_addOrder.Name = "btn_addOrder";
+            this.btn_addOrder.Size = new System.Drawing.Size(135, 73);
+            this.btn_addOrder.TabIndex = 3;
+            this.btn_addOrder.Text = "Thêm Hóa đơn";
+            this.btn_addOrder.UseVisualStyleBackColor = true;
+            this.btn_addOrder.Click += new System.EventHandler(this.btn_addOrder_Click);
+            // 
+            // txt_CusIDORder
+            // 
+            this.txt_CusIDORder.Location = new System.Drawing.Point(335, 151);
+            this.txt_CusIDORder.Name = "txt_CusIDORder";
+            this.txt_CusIDORder.ReadOnly = true;
+            this.txt_CusIDORder.Size = new System.Drawing.Size(100, 22);
+            this.txt_CusIDORder.TabIndex = 3;
+            // 
+            // txt_empId
+            // 
+            this.txt_empId.Location = new System.Drawing.Point(119, 181);
+            this.txt_empId.Name = "txt_empId";
+            this.txt_empId.ReadOnly = true;
+            this.txt_empId.Size = new System.Drawing.Size(100, 22);
+            this.txt_empId.TabIndex = 3;
+            // 
+            // txt_OrderID
+            // 
+            this.txt_OrderID.Location = new System.Drawing.Point(119, 151);
+            this.txt_OrderID.Name = "txt_OrderID";
+            this.txt_OrderID.ReadOnly = true;
+            this.txt_OrderID.Size = new System.Drawing.Size(100, 22);
+            this.txt_OrderID.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 243);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(583, 580);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 187);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(99, 16);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Nhân viên bán: ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(225, 151);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 16);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Mã khách hàng: ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(29, 154);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 16);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Mã hóa đơn: ";
+            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.listCart);
-            this.panel2.Location = new System.Drawing.Point(613, 144);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Controls.Add(this.dtg_OrderDetail);
+            this.panel2.Location = new System.Drawing.Point(613, 147);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(453, 368);
+            this.panel2.Size = new System.Drawing.Size(453, 433);
             this.panel2.TabIndex = 2;
             // 
-            // listCart
+            // dtg_OrderDetail
             // 
-            this.listCart.HideSelection = false;
-            this.listCart.Location = new System.Drawing.Point(4, 4);
-            this.listCart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.listCart.Name = "listCart";
-            this.listCart.Size = new System.Drawing.Size(444, 360);
-            this.listCart.TabIndex = 0;
-            this.listCart.UseCompatibleStateImageBehavior = false;
+            this.dtg_OrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtg_OrderDetail.Location = new System.Drawing.Point(5, 3);
+            this.dtg_OrderDetail.Name = "dtg_OrderDetail";
+            this.dtg_OrderDetail.RowHeadersWidth = 51;
+            this.dtg_OrderDetail.RowTemplate.Height = 24;
+            this.dtg_OrderDetail.Size = new System.Drawing.Size(445, 431);
+            this.dtg_OrderDetail.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.bt_cancel);
             this.panel3.Controls.Add(this.bt_pay);
             this.panel3.Location = new System.Drawing.Point(613, 747);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(453, 111);
             this.panel3.TabIndex = 3;
@@ -147,47 +346,36 @@
             // bt_cancel
             // 
             this.bt_cancel.Location = new System.Drawing.Point(16, 18);
-            this.bt_cancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bt_cancel.Margin = new System.Windows.Forms.Padding(4);
             this.bt_cancel.Name = "bt_cancel";
             this.bt_cancel.Size = new System.Drawing.Size(135, 73);
             this.bt_cancel.TabIndex = 5;
             this.bt_cancel.Text = "Hủy bỏ";
             this.bt_cancel.UseVisualStyleBackColor = true;
+            this.bt_cancel.Click += new System.EventHandler(this.bt_cancel_Click);
             // 
             // bt_pay
             // 
             this.bt_pay.Location = new System.Drawing.Point(315, 18);
-            this.bt_pay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bt_pay.Margin = new System.Windows.Forms.Padding(4);
             this.bt_pay.Name = "bt_pay";
             this.bt_pay.Size = new System.Drawing.Size(135, 73);
             this.bt_pay.TabIndex = 5;
             this.bt_pay.Text = "Thanh toán";
             this.bt_pay.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.num_quantity);
-            this.panel4.Controls.Add(this.bt_addCart);
-            this.panel4.Controls.Add(this.cb_color);
-            this.panel4.Controls.Add(this.cb_size);
-            this.panel4.Controls.Add(this.cb_Category);
-            this.panel4.Location = new System.Drawing.Point(613, 33);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(453, 103);
-            this.panel4.TabIndex = 4;
+            this.bt_pay.Click += new System.EventHandler(this.bt_pay_Click);
             // 
             // num_quantity
             // 
-            this.num_quantity.Location = new System.Drawing.Point(389, 38);
-            this.num_quantity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.num_quantity.Location = new System.Drawing.Point(129, 30);
+            this.num_quantity.Margin = new System.Windows.Forms.Padding(4);
             this.num_quantity.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.num_quantity.Name = "num_quantity";
-            this.num_quantity.Size = new System.Drawing.Size(48, 22);
+            this.num_quantity.Size = new System.Drawing.Size(178, 22);
             this.num_quantity.TabIndex = 4;
             this.num_quantity.Value = new decimal(new int[] {
             1,
@@ -195,71 +383,98 @@
             0,
             0});
             // 
-            // bt_addCart
-            // 
-            this.bt_addCart.Location = new System.Drawing.Point(247, 12);
-            this.bt_addCart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bt_addCart.Name = "bt_addCart";
-            this.bt_addCart.Size = new System.Drawing.Size(135, 73);
-            this.bt_addCart.TabIndex = 3;
-            this.bt_addCart.Text = "Thêm";
-            this.bt_addCart.UseVisualStyleBackColor = true;
-            // 
-            // cb_color
-            // 
-            this.cb_color.FormattingEnabled = true;
-            this.cb_color.Location = new System.Drawing.Point(4, 70);
-            this.cb_color.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cb_color.Name = "cb_color";
-            this.cb_color.Size = new System.Drawing.Size(233, 24);
-            this.cb_color.TabIndex = 2;
-            this.cb_color.Text = "Màu";
-            // 
-            // cb_size
-            // 
-            this.cb_size.FormattingEnabled = true;
-            this.cb_size.Location = new System.Drawing.Point(4, 37);
-            this.cb_size.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cb_size.Name = "cb_size";
-            this.cb_size.Size = new System.Drawing.Size(233, 24);
-            this.cb_size.TabIndex = 1;
-            this.cb_size.Text = "Size";
-            // 
-            // cb_Category
-            // 
-            this.cb_Category.FormattingEnabled = true;
-            this.cb_Category.Location = new System.Drawing.Point(4, 4);
-            this.cb_Category.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cb_Category.Name = "cb_Category";
-            this.cb_Category.Size = new System.Drawing.Size(233, 24);
-            this.cb_Category.TabIndex = 0;
-            this.cb_Category.Text = "Loại";
-            // 
             // panel5
             // 
-            this.panel5.Location = new System.Drawing.Point(613, 519);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Location = new System.Drawing.Point(613, 588);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(453, 220);
+            this.panel5.Size = new System.Drawing.Size(453, 151);
             this.panel5.TabIndex = 5;
             // 
-            // dataGridView1
+            // label1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(583, 811);
-            this.dataGridView1.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(507, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "EMP1";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btn_addOrderDetail);
+            this.groupBox2.Controls.Add(this.num_quantity);
+            this.groupBox2.Controls.Add(this.txt_IDproductDetail);
+            this.groupBox2.Controls.Add(this.labelOrder);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Location = new System.Drawing.Point(613, 33);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(453, 103);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Thêm sản phẩm";
+            // 
+            // btn_addOrderDetail
+            // 
+            this.btn_addOrderDetail.Location = new System.Drawing.Point(315, 17);
+            this.btn_addOrderDetail.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_addOrderDetail.Name = "btn_addOrderDetail";
+            this.btn_addOrderDetail.Size = new System.Drawing.Size(116, 47);
+            this.btn_addOrderDetail.TabIndex = 5;
+            this.btn_addOrderDetail.Text = "Thêm Hóa đơn";
+            this.btn_addOrderDetail.UseVisualStyleBackColor = true;
+            this.btn_addOrderDetail.Click += new System.EventHandler(this.btn_addOrderDetail_Click);
+            // 
+            // txt_IDproductDetail
+            // 
+            this.txt_IDproductDetail.Location = new System.Drawing.Point(129, 66);
+            this.txt_IDproductDetail.Name = "txt_IDproductDetail";
+            this.txt_IDproductDetail.Size = new System.Drawing.Size(100, 22);
+            this.txt_IDproductDetail.TabIndex = 3;
+            // 
+            // labelOrder
+            // 
+            this.labelOrder.AutoSize = true;
+            this.labelOrder.Location = new System.Drawing.Point(253, 66);
+            this.labelOrder.Name = "labelOrder";
+            this.labelOrder.Size = new System.Drawing.Size(78, 16);
+            this.labelOrder.TabIndex = 2;
+            this.labelOrder.Text = "Mã hóa đơn";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(13, 66);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(94, 16);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Mã sản phẩm :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(41, 32);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 16);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Số lượng: ";
+            // 
+            // danhSáchHóaĐơnToolStripMenuItem
+            // 
+            this.danhSáchHóaĐơnToolStripMenuItem.Name = "danhSáchHóaĐơnToolStripMenuItem";
+            this.danhSáchHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
+            this.danhSáchHóaĐơnToolStripMenuItem.Text = "Danh sách hóa đơn";
+            this.danhSáchHóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.danhSáchHóaĐơnToolStripMenuItem_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1083, 874);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -271,11 +486,16 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.num_quantity)).EndInit();
+            this.panel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_OrderDetail)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.num_quantity)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,20 +509,40 @@
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ListView listCart;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.NumericUpDown num_quantity;
-        private System.Windows.Forms.Button bt_addCart;
-        private System.Windows.Forms.ComboBox cb_color;
-        private System.Windows.Forms.ComboBox cb_size;
-        private System.Windows.Forms.ComboBox cb_Category;
         private System.Windows.Forms.Button bt_cancel;
         private System.Windows.Forms.Button bt_pay;
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kháchHàngToolStripMenuItem;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txt_CusID;
+        private System.Windows.Forms.TextBox txt_NameCus;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_FindCus;
+        private System.Windows.Forms.TextBox txt_FindCus;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt_phone;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btn_addOrder;
+        private System.Windows.Forms.TextBox txt_empId;
+        private System.Windows.Forms.TextBox txt_OrderID;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txt_CusIDORder;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView dtg_OrderDetail;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btn_addOrderDetail;
+        private System.Windows.Forms.TextBox txt_IDproductDetail;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelOrder;
+        private System.Windows.Forms.ToolStripMenuItem danhSáchHóaĐơnToolStripMenuItem;
     }
 }
 

@@ -18,5 +18,13 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
         {
             conn = new DBConnection();
         }
+        public DataTable findCus(string phone)
+        {
+
+            string query = "FIND_CUS";
+            SqlParameter[] parameter = { new SqlParameter("@PHONE", SqlDbType.NVarChar, 20) { Value = phone } };
+
+            return conn.ExecuteReader(query,parameter);
+        }
     }
 }
