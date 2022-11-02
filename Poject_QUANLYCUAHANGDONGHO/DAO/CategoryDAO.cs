@@ -18,5 +18,11 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
         {
             conn = new DBConnection();
         }
+
+        public DataTable GetCategory()
+        {
+            string query = "GET_CATEGORY";
+            return conn.ExecuteReader(query);
+        }
     }
 }

@@ -77,6 +77,12 @@
     <Compile Include="Class\ProductColor.cs" />
     <Compile Include="Class\ProductSize.cs" />
     <Compile Include="DAO\ProductDAO.cs" />
+    <Compile Include="Form\FormProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormProduct.Designer.cs">
+      <DependentUpon>FormProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\FormAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FormOrder.resx">
       <DependentUpon>FormOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormProduct.resx">
+      <DependentUpon>FormProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

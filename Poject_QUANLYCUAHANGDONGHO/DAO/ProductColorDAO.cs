@@ -17,5 +17,11 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
         {
             conn = new DBConnection();
         }
+
+        public DataTable GetProductColor()
+        {
+            string query = "GET_PRODUCTCOLOR";
+            return conn.ExecuteReader(query);
+        }
     }
 }

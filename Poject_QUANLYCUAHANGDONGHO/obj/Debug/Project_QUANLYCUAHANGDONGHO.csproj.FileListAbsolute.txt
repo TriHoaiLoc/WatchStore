@@ -52,3 +52,21 @@ D:\gifPro\project\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLY
 D:\gifPro\project\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.csproj.CoreCompileInputs.cache
 D:\gifPro\project\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.exe
 D:\gifPro\project\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.pdb
+C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\bin\Debug\Project_QUANLYCUAHANGDONGHO.exe.config
+C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\bin\Debug\Project_QUANLYCUAHANGDONGHO.exe
+C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\bin\Debug\Project_QUANLYCUAHANGDONGHO.pdb
+C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.csproj.AssemblyReference.cache
+C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.csproj.SuggestedBindingRedirects.cache
+C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormAccount.resources
+C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormAdmin.resources
+C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormCustomer.resources
+C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.Form.FormEmployee.resources
+C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormLogin.resources
+C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormMain.resources
+C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormOrder.resources
+C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormProduct.resources
+C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.Properties.Resources.resources
+C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.csproj.GenerateResource.cache
+C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.csproj.CoreCompileInputs.cache
+C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.exe
+C:\Users\huyda\OneDrive\Documents\Fuck education\DBMS\WatchStore\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.pdb

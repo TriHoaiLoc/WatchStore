@@ -17,5 +17,11 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
         {
             conn = new DBConnection();
         }
+
+        public DataTable GetProductSize()
+        {
+            string query = "GET_PRODUCTSIZE";
+            return conn.ExecuteReader(query);
+        }
     }
 }

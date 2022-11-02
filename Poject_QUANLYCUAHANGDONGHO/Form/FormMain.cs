@@ -144,5 +144,10 @@ namespace Project_QUANLYCUAHANGDONGHO
             FormEmployee formEmployee = new FormEmployee();
             formEmployee.ShowDialog();
         }
+        private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormProduct formProduct = new FormProduct();
+            formProduct.ShowDialog();
+        }
     }
 }

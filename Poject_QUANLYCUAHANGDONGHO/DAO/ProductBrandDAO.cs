@@ -17,5 +17,11 @@ namespace Project_QUANLYCUAHANGDONGHO.Class
         {
             conn = new DBConnection();
         }
+
+        public DataTable GetProductBrand()
+        {
+            string query = "GET_PRODUCTBRAND";
+            return conn.ExecuteReader(query);
+        }
     }
 }
