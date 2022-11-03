@@ -18,9 +18,9 @@ namespace Project_QUANLYCUAHANGDONGHO.Class
 
         public Account(string username, string password, string employeeID)
         {
-            this.username = username;
-            this.password = password;
-            this.employeeID = employeeID;
+            this.Username = username;
+            this.Password = password;
+            this.EmployeeID = employeeID;
         }
 
         public string Username { get => username; set => username = value; }

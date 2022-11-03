@@ -30,18 +30,18 @@ namespace Project_QUANLYCUAHANGDONGHO
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lb_repPass = new System.Windows.Forms.Label();
+            this.tb_username = new System.Windows.Forms.TextBox();
+            this.lb_nameEmp = new System.Windows.Forms.Label();
             this.tb_repPass = new System.Windows.Forms.TextBox();
             this.tb_newPass = new System.Windows.Forms.TextBox();
-            this.tb_nameEmp = new System.Windows.Forms.TextBox();
-            this.lb_repPass = new System.Windows.Forms.Label();
-            this.lb_username = new System.Windows.Forms.Label();
-            this.tb_username = new System.Windows.Forms.TextBox();
             this.lb_newPass = new System.Windows.Forms.Label();
-            this.lb_nameEmp = new System.Windows.Forms.Label();
-            this.bt_update = new System.Windows.Forms.Button();
-            this.bt_Exit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_oldPass = new System.Windows.Forms.TextBox();
+            this.lb_username = new System.Windows.Forms.Label();
+            this.tb_nameEmp = new System.Windows.Forms.TextBox();
+            this.bt_update = new System.Windows.Forms.Button();
+            this.bt_Exit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +72,38 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.tableLayoutPanel1.Size = new System.Drawing.Size(426, 259);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
+            // lb_repPass
+            // 
+            this.lb_repPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_repPass.AutoSize = true;
+            this.lb_repPass.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_repPass.Location = new System.Drawing.Point(3, 220);
+            this.lb_repPass.Name = "lb_repPass";
+            this.lb_repPass.Size = new System.Drawing.Size(128, 23);
+            this.lb_repPass.TabIndex = 11;
+            this.lb_repPass.Text = "Nhập lại:";
+            // 
+            // tb_username
+            // 
+            this.tb_username.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_username.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_username.Location = new System.Drawing.Point(137, 61);
+            this.tb_username.Name = "tb_username";
+            this.tb_username.ReadOnly = true;
+            this.tb_username.Size = new System.Drawing.Size(286, 31);
+            this.tb_username.TabIndex = 10;
+            // 
+            // lb_nameEmp
+            // 
+            this.lb_nameEmp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_nameEmp.AutoSize = true;
+            this.lb_nameEmp.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_nameEmp.Location = new System.Drawing.Point(3, 14);
+            this.lb_nameEmp.Name = "lb_nameEmp";
+            this.lb_nameEmp.Size = new System.Drawing.Size(128, 23);
+            this.lb_nameEmp.TabIndex = 4;
+            this.lb_nameEmp.Text = "Tên nhân viên:";
+            // 
             // tb_repPass
             // 
             this.tb_repPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -92,26 +124,37 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.tb_newPass.TabIndex = 10;
             this.tb_newPass.UseSystemPasswordChar = true;
             // 
-            // tb_nameEmp
+            // lb_newPass
             // 
-            this.tb_nameEmp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_nameEmp.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_nameEmp.Location = new System.Drawing.Point(137, 10);
-            this.tb_nameEmp.Name = "tb_nameEmp";
-            this.tb_nameEmp.ReadOnly = true;
-            this.tb_nameEmp.Size = new System.Drawing.Size(286, 31);
-            this.tb_nameEmp.TabIndex = 6;
+            this.lb_newPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_newPass.AutoSize = true;
+            this.lb_newPass.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_newPass.Location = new System.Drawing.Point(3, 167);
+            this.lb_newPass.Name = "lb_newPass";
+            this.lb_newPass.Size = new System.Drawing.Size(128, 23);
+            this.lb_newPass.TabIndex = 9;
+            this.lb_newPass.Text = "Mật khẩu mới:";
             // 
-            // lb_repPass
+            // label1
             // 
-            this.lb_repPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_repPass.AutoSize = true;
-            this.lb_repPass.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_repPass.Location = new System.Drawing.Point(3, 220);
-            this.lb_repPass.Name = "lb_repPass";
-            this.lb_repPass.Size = new System.Drawing.Size(128, 23);
-            this.lb_repPass.TabIndex = 11;
-            this.lb_repPass.Text = "Nhập lại:";
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 116);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 23);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Mật khẩu cũ:";
+            // 
+            // tb_oldPass
+            // 
+            this.tb_oldPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_oldPass.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_oldPass.Location = new System.Drawing.Point(137, 112);
+            this.tb_oldPass.Name = "tb_oldPass";
+            this.tb_oldPass.Size = new System.Drawing.Size(286, 31);
+            this.tb_oldPass.TabIndex = 5;
+            this.tb_oldPass.UseSystemPasswordChar = true;
             // 
             // lb_username
             // 
@@ -124,37 +167,15 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.lb_username.TabIndex = 3;
             this.lb_username.Text = "Username:";
             // 
-            // tb_username
+            // tb_nameEmp
             // 
-            this.tb_username.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_username.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_username.Location = new System.Drawing.Point(137, 61);
-            this.tb_username.Name = "tb_username";
-            this.tb_username.ReadOnly = true;
-            this.tb_username.Size = new System.Drawing.Size(286, 31);
-            this.tb_username.TabIndex = 5;
-            // 
-            // lb_newPass
-            // 
-            this.lb_newPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_newPass.AutoSize = true;
-            this.lb_newPass.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_newPass.Location = new System.Drawing.Point(3, 167);
-            this.lb_newPass.Name = "lb_newPass";
-            this.lb_newPass.Size = new System.Drawing.Size(128, 23);
-            this.lb_newPass.TabIndex = 9;
-            this.lb_newPass.Text = "Mật khẩu mới:";
-            // 
-            // lb_nameEmp
-            // 
-            this.lb_nameEmp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_nameEmp.AutoSize = true;
-            this.lb_nameEmp.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_nameEmp.Location = new System.Drawing.Point(3, 14);
-            this.lb_nameEmp.Name = "lb_nameEmp";
-            this.lb_nameEmp.Size = new System.Drawing.Size(128, 23);
-            this.lb_nameEmp.TabIndex = 4;
-            this.lb_nameEmp.Text = "Tên nhân viên:";
+            this.tb_nameEmp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_nameEmp.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_nameEmp.Location = new System.Drawing.Point(137, 10);
+            this.tb_nameEmp.Name = "tb_nameEmp";
+            this.tb_nameEmp.ReadOnly = true;
+            this.tb_nameEmp.Size = new System.Drawing.Size(286, 31);
+            this.tb_nameEmp.TabIndex = 6;
             // 
             // bt_update
             // 
@@ -175,27 +196,6 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.bt_Exit.Text = "Thoát";
             this.bt_Exit.UseVisualStyleBackColor = true;
             this.bt_Exit.Click += new System.EventHandler(this.bt_Exit_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 116);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 23);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Mật khẩu cũ:";
-            // 
-            // tb_oldPass
-            // 
-            this.tb_oldPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_oldPass.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_oldPass.Location = new System.Drawing.Point(137, 112);
-            this.tb_oldPass.Name = "tb_oldPass";
-            this.tb_oldPass.Size = new System.Drawing.Size(286, 31);
-            this.tb_oldPass.TabIndex = 10;
-            this.tb_oldPass.UseSystemPasswordChar = true;
             // 
             // FormAccount
             // 

@@ -17,22 +17,38 @@ namespace Project_QUANLYCUAHANGDONGHO
     
     public partial class FormMain : Form
     {
-        
-     
+        public FormLogin formLogin;
+
+        public string empID = null;
+        public string Username = null;
+        public string office = null;
         public FormMain()
         {
             InitializeComponent();
-
-            ShowProduct();
         }
-       
 
         private void ShowProduct()
         {
             ProductDAO productDAO = new ProductDAO();
             dataGridView1.DataSource = productDAO.ShowProduct();
         }
-
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            //MainNoEnable();
+            formLogin = new FormLogin();
+            formLogin.formMain = this;
+            formLogin.ShowDialog();
+            if(office == "Admin")
+            {
+                //MainEnabled();
+            }
+            else
+            {
+                //MainNoEnable();
+            }
+            lb_username.Text = Username;
+            ShowProduct();
+        }
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormAccount formAccount = new FormAccount();
@@ -71,7 +87,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             //01919331
             OrderDAO orderDAO = new OrderDAO();
 
-            orderDAO.createOrder(txt_CusID.Text,label1.Text);
+            orderDAO.createOrder(txt_CusID.Text,lb_username.Text);
             
             DataTable reader = orderDAO.showLastOrder();
 
