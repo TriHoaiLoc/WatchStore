@@ -36,6 +36,14 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
             new SqlParameter("@ORDERID", SqlDbType.NVarChar, 10) { Value = orderID } };
             return conn.ExecuteReader(query, parameters);
         }
+        public object countToalTemp(string orderID)
+        {
+            string query = "THANHTOAN_TAMTHOI";
+            SqlParameter[] parameters =
+             {
+            new SqlParameter("@ORDERID", SqlDbType.NVarChar, 10) { Value = orderID } };
+            return conn.ExecuteScalar(query, parameters);
+        }
         
     }
 }

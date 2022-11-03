@@ -34,6 +34,8 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.butsearchcus = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtcusid = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.butdelcus = new System.Windows.Forms.Button();
             this.buteditcus = new System.Windows.Forms.Button();
             this.butaddcus = new System.Windows.Forms.Button();
@@ -48,8 +50,6 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtcusid = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -83,13 +83,14 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.butsearchcus.TabIndex = 2;
             this.butsearchcus.Text = "Tìm";
             this.butsearchcus.UseVisualStyleBackColor = true;
+            this.butsearchcus.Click += new System.EventHandler(this.butsearchcus_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(523, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 17);
+            this.label2.Size = new System.Drawing.Size(105, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Tìm khách hàng:";
             // 
@@ -116,6 +117,22 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khách hàng";
+            // 
+            // txtcusid
+            // 
+            this.txtcusid.Location = new System.Drawing.Point(161, 36);
+            this.txtcusid.Name = "txtcusid";
+            this.txtcusid.Size = new System.Drawing.Size(234, 22);
+            this.txtcusid.TabIndex = 14;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(27, 39);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(101, 16);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Mã khách hàng:";
             // 
             // butdelcus
             // 
@@ -191,7 +208,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(30, 183);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 17);
+            this.label7.Size = new System.Drawing.Size(44, 16);
             this.label7.TabIndex = 4;
             this.label7.Text = "Email:";
             // 
@@ -200,7 +217,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(30, 155);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 17);
+            this.label6.Size = new System.Drawing.Size(88, 16);
             this.label6.TabIndex = 3;
             this.label6.Text = "Số điện thoại:";
             // 
@@ -209,7 +226,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(30, 127);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 17);
+            this.label5.Size = new System.Drawing.Size(50, 16);
             this.label5.TabIndex = 2;
             this.label5.Text = "Địa chỉ:";
             // 
@@ -218,7 +235,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(30, 99);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 17);
+            this.label4.Size = new System.Drawing.Size(57, 16);
             this.label4.TabIndex = 1;
             this.label4.Text = "Giới tính:";
             // 
@@ -227,7 +244,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(30, 69);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 17);
+            this.label3.Size = new System.Drawing.Size(67, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Họ và tên:";
             // 
@@ -237,22 +254,6 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(201, 22);
             this.textBox1.TabIndex = 6;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(30, 41);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 17);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Mã khách hàng:";
-            // 
-            // txtcusid
-            // 
-            this.txtcusid.Location = new System.Drawing.Point(164, 38);
-            this.txtcusid.Name = "txtcusid";
-            this.txtcusid.Size = new System.Drawing.Size(234, 22);
-            this.txtcusid.TabIndex = 14;
             // 
             // FormCustomer
             // 

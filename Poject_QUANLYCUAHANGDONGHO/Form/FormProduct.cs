@@ -33,6 +33,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             LoadAllCombo();
             tabControl1.TabPages.Remove(editTab);
 
+            cb_search.Items.Add("Name");
             cb_search.Items.Add("Category");
             cb_search.Items.Add("Color");
             cb_search.Items.Add("Brand");

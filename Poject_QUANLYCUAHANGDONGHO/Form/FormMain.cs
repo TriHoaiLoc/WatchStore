@@ -14,7 +14,7 @@ using Project_QUANLYCUAHANGDONGHO.DAO;
 
 namespace Project_QUANLYCUAHANGDONGHO
 {
-    
+
     public partial class FormMain : Form
     {
         public FormLogin formLogin;
@@ -35,10 +35,11 @@ namespace Project_QUANLYCUAHANGDONGHO
         private void FormMain_Load(object sender, EventArgs e)
         {
             //MainNoEnable();
+            
             formLogin = new FormLogin();
             formLogin.formMain = this;
             formLogin.ShowDialog();
-            if(office == "Admin")
+            if (office == "Admin")
             {
                 //MainEnabled();
             }
@@ -48,6 +49,8 @@ namespace Project_QUANLYCUAHANGDONGHO
             }
             lb_username.Text = Username;
             ShowProduct();
+            loadAllComboBox();
+            ShowIDofEmployee();
         }
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -68,11 +71,11 @@ namespace Project_QUANLYCUAHANGDONGHO
 
         private void btn_FindCus_Click(object sender, EventArgs e)
         {
-            //01919331
+            //0999999991
             CustomerDAO customerDAO = new CustomerDAO();
-            
-            DataTable reader=customerDAO.findCus(txt_FindCus.Text);
-
+            OrderDAO orderDAO = new OrderDAO();
+           
+            DataTable reader = customerDAO.findCus(txt_FindCus.Text);
             foreach (DataRow row in reader.Rows)
             {
                 txt_CusID.Text = row["CustomerID"].ToString();
@@ -80,24 +83,20 @@ namespace Project_QUANLYCUAHANGDONGHO
                 txt_phone.Text = row["CustomerPhone"].ToString();
             }
 
+            orderDAO.createOrder(txt_CusID.Text, txt_empId.Text);
+
+            object reader2 = orderDAO.showLastOrder();
+
+          txt_OrderID.Text=reader2.ToString();
         }
 
-        private void btn_addOrder_Click(object sender, EventArgs e)
+        public void ShowIDofEmployee()
         {
-            //01919331
-            OrderDAO orderDAO = new OrderDAO();
+            EmployeeDAO employee = new EmployeeDAO();
+           
+            object reader = employee.FindEmployeeID(lb_username.Text);
 
-            orderDAO.createOrder(txt_CusID.Text,lb_username.Text);
-            
-            DataTable reader = orderDAO.showLastOrder();
-
-            foreach (DataRow row in reader.Rows)
-            {
-                txt_OrderID.Text = row["OrderID"].ToString();
-                txt_empId.Text = row["EmployeeID"].ToString();
-                txt_CusIDORder.Text = row["CustomerID"].ToString();
-            }
-            labelOrder.Text = txt_OrderID.Text;
+           txt_empId.Text=reader.ToString();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -113,24 +112,40 @@ namespace Project_QUANLYCUAHANGDONGHO
         private void btn_addOrderDetail_Click(object sender, EventArgs e)
         {
             OrderDetailDAO orderDetailDAO = new OrderDetailDAO();
-            orderDetailDAO.addOrderDetail(labelOrder.Text,txt_IDproductDetail.Text,(int)num_quantity.Value);
-
+            orderDetailDAO.addOrderDetail(txt_OrderID.Text,txt_IDproductDetail.Text,(int)num_quantity.Value);
+            object reader=orderDetailDAO.countToalTemp(txt_OrderID.Text);
             dtg_OrderDetail.DataSource=orderDetailDAO.showOrderDetail(txt_OrderID.Text);
+            lb_TotalOrder.Text=reader.ToString();
+            
 
         }
 
         private void bt_pay_Click(object sender, EventArgs e)
         {
-            OrderDAO orderDAO = new OrderDAO();
-            orderDAO.ThanhToan(txt_OrderID.Text);
-            FormMain formMain = new FormMain();
+            if (MessageBox.Show("Bạn có thật sự muốn thanh toán?", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                OrderDAO orderDAO = new OrderDAO();
 
+                orderDAO.ThanhToan(txt_OrderID.Text);
+                resetForm();
+            }
 
-            this.Close();
+            
 
-            formMain.ShowDialog();
-            this.Show();
+           
 
+        }
+        public void resetForm()
+        {
+            dtg_OrderDetail.DataSource = null; 
+            txt_FindCus.Text="";
+            txt_NameCus.Text = "";
+            txt_CusID.Text = "";
+            txt_phone.Text = "";
+            txt_IDproductDetail.Text = "";
+            txt_OrderID.Text = "";
+            lb_TotalOrder.Text = "0";
+            lb_username.Text = Username;
         }
 
         private void danhSáchHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -164,6 +179,28 @@ namespace Project_QUANLYCUAHANGDONGHO
         {
             FormProduct formProduct = new FormProduct();
             formProduct.ShowDialog();
+        }
+
+        public void loadAllComboBox()
+        {
+            cb_search.Items.Add("Name");
+            cb_search.Items.Add("Category");
+            cb_search.Items.Add("Color");
+            cb_search.Items.Add("Brand");
+            cb_search.Items.Add("Size");
+        }
+
+
+        private void cb_search_SelectedValueChanged(object sender, EventArgs e)
+        {
+            ProductDAO productDAO = new ProductDAO();
+            dataGridView1.DataSource = productDAO.SearchProductName(cb_search.Text, tb_search.Text);
+        }
+
+        private void tb_search_TextChanged(object sender, EventArgs e)
+        {
+            ProductDAO productDAO = new ProductDAO();
+            dataGridView1.DataSource = productDAO.SearchProductName(cb_search.Text, tb_search.Text);
         }
     }
 }

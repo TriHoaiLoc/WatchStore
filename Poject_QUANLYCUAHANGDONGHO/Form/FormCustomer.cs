@@ -64,5 +64,14 @@ namespace Project_QUANLYCUAHANGDONGHO
             customerDAO.DelCustomer(txtcusid.Text);
             ShowCustomer();
         }
+
+        private void butsearchcus_Click(object sender, EventArgs e)
+        {
+            CustomerDAO customerDAO = new CustomerDAO();
+           
+            dataGridView2.DataSource = customerDAO.findCus(textBox1.Text);
+           
+          
+        }
     }
 }

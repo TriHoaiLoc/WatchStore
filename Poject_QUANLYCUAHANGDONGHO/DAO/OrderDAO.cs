@@ -29,12 +29,12 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
             conn.ExecuteScalar(query, parameters);
 
         }
-        public DataTable showLastOrder()
+        public object showLastOrder()
         {
             string query = "SELECT_NEW_ORDER";
 
 
-            return conn.ExecuteReader(query);
+            return conn.ExecuteScalar(query);
         }
         public void ThanhToan(string orderID)
         {

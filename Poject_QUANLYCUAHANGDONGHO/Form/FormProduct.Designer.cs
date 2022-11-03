@@ -31,6 +31,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.listTab = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cb_search = new System.Windows.Forms.ComboBox();
             this.tb_search = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bt_deleteProduct = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@
             this.tb_name = new System.Windows.Forms.TextBox();
             this.tb_quantity = new System.Windows.Forms.TextBox();
             this.bt_edit = new System.Windows.Forms.Button();
-            this.cb_search = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.listTab.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -96,6 +96,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(685, 556);
             this.panel1.TabIndex = 7;
+            // 
+            // cb_search
+            // 
+            this.cb_search.Font = new System.Drawing.Font("Calibri", 14.25F);
+            this.cb_search.FormattingEnabled = true;
+            this.cb_search.Location = new System.Drawing.Point(441, 19);
+            this.cb_search.Name = "cb_search";
+            this.cb_search.Size = new System.Drawing.Size(121, 37);
+            this.cb_search.TabIndex = 9;
+            this.cb_search.SelectedValueChanged += new System.EventHandler(this.cb_search_SelectedValueChanged);
             // 
             // tb_search
             // 
@@ -352,16 +362,6 @@
             this.bt_edit.Text = "Thêm";
             this.bt_edit.UseVisualStyleBackColor = true;
             this.bt_edit.Click += new System.EventHandler(this.bt_edit_Click);
-            // 
-            // cb_search
-            // 
-            this.cb_search.Font = new System.Drawing.Font("Calibri", 14.25F);
-            this.cb_search.FormattingEnabled = true;
-            this.cb_search.Location = new System.Drawing.Point(439, 19);
-            this.cb_search.Name = "cb_search";
-            this.cb_search.Size = new System.Drawing.Size(121, 37);
-            this.cb_search.TabIndex = 9;
-            this.cb_search.SelectedValueChanged += new System.EventHandler(this.cb_search_SelectedValueChanged);
             // 
             // FormProduct
             // 

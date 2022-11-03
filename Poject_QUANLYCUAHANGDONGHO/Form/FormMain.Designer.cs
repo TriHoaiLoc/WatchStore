@@ -38,6 +38,8 @@
             this.nhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sảnPhẩmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cb_search = new System.Windows.Forms.ComboBox();
+            this.tb_search = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_CusID = new System.Windows.Forms.TextBox();
             this.txt_phone = new System.Windows.Forms.TextBox();
@@ -48,13 +50,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_FindCus = new System.Windows.Forms.Button();
             this.txt_FindCus = new System.Windows.Forms.TextBox();
-            this.btn_addOrder = new System.Windows.Forms.Button();
-            this.txt_CusIDORder = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txt_empId = new System.Windows.Forms.TextBox();
             this.txt_OrderID = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtg_OrderDetail = new System.Windows.Forms.DataGridView();
@@ -63,6 +62,8 @@
             this.bt_pay = new System.Windows.Forms.Button();
             this.num_quantity = new System.Windows.Forms.NumericUpDown();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lb_TotalOrder = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lb_username = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_addOrderDetail = new System.Windows.Forms.Button();
@@ -70,6 +71,7 @@
             this.labelOrder = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -78,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtg_OrderDetail)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_quantity)).BeginInit();
+            this.panel5.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,21 +96,21 @@
             this.sảnPhẩmToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(812, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1083, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // adminToolStripMenuItem
             // 
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
             this.adminToolStripMenuItem.Text = "Admin";
             // 
             // kháchHàngToolStripMenuItem
             // 
             this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
-            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
             this.kháchHàngToolStripMenuItem.Text = "Khách hàng";
             this.kháchHàngToolStripMenuItem.Click += new System.EventHandler(this.kháchHàngToolStripMenuItem_Click);
             // 
@@ -117,59 +120,76 @@
             this.thôngTinCáNhânToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
             this.thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
-            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
+            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
             this.thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông tin tài khoản";
             // 
             // thôngTinCáNhânToolStripMenuItem
             // 
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
             this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // danhSáchHóaĐơnToolStripMenuItem
             // 
             this.danhSáchHóaĐơnToolStripMenuItem.Name = "danhSáchHóaĐơnToolStripMenuItem";
-            this.danhSáchHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
+            this.danhSáchHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
             this.danhSáchHóaĐơnToolStripMenuItem.Text = "Danh sách hóa đơn";
             this.danhSáchHóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.danhSáchHóaĐơnToolStripMenuItem_Click);
             // 
             // nhânViênToolStripMenuItem
             // 
             this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
-            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
             this.nhânViênToolStripMenuItem.Text = "Nhân viên";
             this.nhânViênToolStripMenuItem.Click += new System.EventHandler(this.nhânViênToolStripMenuItem_Click);
             // 
             // sảnPhẩmToolStripMenuItem
             // 
             this.sảnPhẩmToolStripMenuItem.Name = "sảnPhẩmToolStripMenuItem";
-            this.sảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.sảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
             this.sảnPhẩmToolStripMenuItem.Text = "Sản phẩm";
             this.sảnPhẩmToolStripMenuItem.Click += new System.EventHandler(this.sảnPhẩmToolStripMenuItem_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cb_search);
+            this.panel1.Controls.Add(this.tb_search);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.btn_addOrder);
-            this.panel1.Controls.Add(this.txt_CusIDORder);
-            this.panel1.Controls.Add(this.txt_empId);
-            this.panel1.Controls.Add(this.txt_OrderID);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(12, 27);
+            this.panel1.Location = new System.Drawing.Point(16, 33);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(442, 671);
+            this.panel1.Size = new System.Drawing.Size(589, 826);
             this.panel1.TabIndex = 1;
+            // 
+            // cb_search
+            // 
+            this.cb_search.Font = new System.Drawing.Font("Calibri", 14.25F);
+            this.cb_search.FormattingEnabled = true;
+            this.cb_search.Location = new System.Drawing.Point(452, 166);
+            this.cb_search.Name = "cb_search";
+            this.cb_search.Size = new System.Drawing.Size(121, 37);
+            this.cb_search.TabIndex = 11;
+            this.cb_search.SelectedValueChanged += new System.EventHandler(this.cb_search_SelectedValueChanged);
+            // 
+            // tb_search
+            // 
+            this.tb_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_search.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_search.Location = new System.Drawing.Point(28, 167);
+            this.tb_search.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_search.Name = "tb_search";
+            this.tb_search.Size = new System.Drawing.Size(334, 36);
+            this.tb_search.TabIndex = 10;
+            this.tb_search.TextChanged += new System.EventHandler(this.tb_search_TextChanged);
             // 
             // groupBox1
             // 
@@ -182,88 +202,84 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btn_FindCus);
             this.groupBox1.Controls.Add(this.txt_FindCus);
-            this.groupBox1.Location = new System.Drawing.Point(2, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(3, 12);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(437, 102);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(583, 126);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khách hàng";
             // 
             // txt_CusID
             // 
-            this.txt_CusID.Location = new System.Drawing.Point(135, 80);
-            this.txt_CusID.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_CusID.Location = new System.Drawing.Point(180, 98);
+            this.txt_CusID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_CusID.Name = "txt_CusID";
             this.txt_CusID.ReadOnly = true;
-            this.txt_CusID.Size = new System.Drawing.Size(76, 20);
+            this.txt_CusID.Size = new System.Drawing.Size(100, 22);
             this.txt_CusID.TabIndex = 3;
             // 
             // txt_phone
             // 
-            this.txt_phone.Location = new System.Drawing.Point(305, 56);
-            this.txt_phone.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_phone.Location = new System.Drawing.Point(407, 69);
+            this.txt_phone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.ReadOnly = true;
-            this.txt_phone.Size = new System.Drawing.Size(76, 20);
+            this.txt_phone.Size = new System.Drawing.Size(100, 22);
             this.txt_phone.TabIndex = 3;
             // 
             // txt_NameCus
             // 
-            this.txt_NameCus.Location = new System.Drawing.Point(135, 54);
-            this.txt_NameCus.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_NameCus.Location = new System.Drawing.Point(180, 66);
+            this.txt_NameCus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_NameCus.Name = "txt_NameCus";
             this.txt_NameCus.ReadOnly = true;
-            this.txt_NameCus.Size = new System.Drawing.Size(76, 20);
+            this.txt_NameCus.Size = new System.Drawing.Size(100, 22);
             this.txt_NameCus.TabIndex = 3;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(232, 56);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(309, 69);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 13);
+            this.label6.Size = new System.Drawing.Size(91, 16);
             this.label6.TabIndex = 2;
             this.label6.Text = "Số điện thoại: ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 83);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(60, 102);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 13);
+            this.label3.Size = new System.Drawing.Size(102, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mã Khách hàng:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 27);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(37, 33);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 13);
+            this.label4.Size = new System.Drawing.Size(122, 16);
             this.label4.TabIndex = 2;
             this.label4.Text = "Nhập số điện thoại:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(92, 58);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(123, 71);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.Size = new System.Drawing.Size(37, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tên: ";
             // 
             // btn_FindCus
             // 
-            this.btn_FindCus.Location = new System.Drawing.Point(287, 22);
-            this.btn_FindCus.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_FindCus.Location = new System.Drawing.Point(383, 27);
+            this.btn_FindCus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_FindCus.Name = "btn_FindCus";
-            this.btn_FindCus.Size = new System.Drawing.Size(56, 19);
+            this.btn_FindCus.Size = new System.Drawing.Size(75, 23);
             this.btn_FindCus.TabIndex = 1;
             this.btn_FindCus.Text = "Tìm";
             this.btn_FindCus.UseVisualStyleBackColor = true;
@@ -271,124 +287,96 @@
             // 
             // txt_FindCus
             // 
-            this.txt_FindCus.Location = new System.Drawing.Point(135, 23);
-            this.txt_FindCus.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_FindCus.Location = new System.Drawing.Point(180, 28);
+            this.txt_FindCus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_FindCus.Name = "txt_FindCus";
-            this.txt_FindCus.Size = new System.Drawing.Size(149, 20);
+            this.txt_FindCus.Size = new System.Drawing.Size(197, 22);
             this.txt_FindCus.TabIndex = 0;
-            // 
-            // btn_addOrder
-            // 
-            this.btn_addOrder.Location = new System.Drawing.Point(338, 117);
-            this.btn_addOrder.Name = "btn_addOrder";
-            this.btn_addOrder.Size = new System.Drawing.Size(101, 59);
-            this.btn_addOrder.TabIndex = 3;
-            this.btn_addOrder.Text = "Thêm Hóa đơn";
-            this.btn_addOrder.UseVisualStyleBackColor = true;
-            this.btn_addOrder.Click += new System.EventHandler(this.btn_addOrder_Click);
-            // 
-            // txt_CusIDORder
-            // 
-            this.txt_CusIDORder.Location = new System.Drawing.Point(251, 123);
-            this.txt_CusIDORder.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_CusIDORder.Name = "txt_CusIDORder";
-            this.txt_CusIDORder.ReadOnly = true;
-            this.txt_CusIDORder.Size = new System.Drawing.Size(76, 20);
-            this.txt_CusIDORder.TabIndex = 3;
-            // 
-            // txt_empId
-            // 
-            this.txt_empId.Location = new System.Drawing.Point(89, 147);
-            this.txt_empId.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_empId.Name = "txt_empId";
-            this.txt_empId.ReadOnly = true;
-            this.txt_empId.Size = new System.Drawing.Size(76, 20);
-            this.txt_empId.TabIndex = 3;
-            // 
-            // txt_OrderID
-            // 
-            this.txt_OrderID.Location = new System.Drawing.Point(89, 123);
-            this.txt_OrderID.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_OrderID.Name = "txt_OrderID";
-            this.txt_OrderID.ReadOnly = true;
-            this.txt_OrderID.Size = new System.Drawing.Size(76, 20);
-            this.txt_OrderID.TabIndex = 3;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 197);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 242);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(437, 471);
+            this.dataGridView1.Size = new System.Drawing.Size(583, 580);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // txt_empId
+            // 
+            this.txt_empId.Location = new System.Drawing.Point(112, 46);
+            this.txt_empId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_empId.Name = "txt_empId";
+            this.txt_empId.ReadOnly = true;
+            this.txt_empId.Size = new System.Drawing.Size(100, 22);
+            this.txt_empId.TabIndex = 3;
+            // 
+            // txt_OrderID
+            // 
+            this.txt_OrderID.Location = new System.Drawing.Point(112, 16);
+            this.txt_OrderID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_OrderID.Name = "txt_OrderID";
+            this.txt_OrderID.ReadOnly = true;
+            this.txt_OrderID.Size = new System.Drawing.Size(100, 22);
+            this.txt_OrderID.TabIndex = 3;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(10, 152);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(6, 52);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 13);
+            this.label7.Size = new System.Drawing.Size(99, 16);
             this.label7.TabIndex = 2;
             this.label7.Text = "Nhân viên bán: ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(169, 123);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 13);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Mã khách hàng: ";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 125);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(22, 19);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 13);
+            this.label5.Size = new System.Drawing.Size(84, 16);
             this.label5.TabIndex = 2;
             this.label5.Text = "Mã hóa đơn: ";
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dtg_OrderDetail);
-            this.panel2.Location = new System.Drawing.Point(460, 119);
+            this.panel2.Location = new System.Drawing.Point(613, 146);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(340, 352);
+            this.panel2.Size = new System.Drawing.Size(453, 433);
             this.panel2.TabIndex = 2;
             // 
             // dtg_OrderDetail
             // 
             this.dtg_OrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_OrderDetail.Location = new System.Drawing.Point(4, 2);
-            this.dtg_OrderDetail.Margin = new System.Windows.Forms.Padding(2);
+            this.dtg_OrderDetail.Location = new System.Drawing.Point(5, 2);
+            this.dtg_OrderDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtg_OrderDetail.Name = "dtg_OrderDetail";
             this.dtg_OrderDetail.RowHeadersWidth = 51;
             this.dtg_OrderDetail.RowTemplate.Height = 24;
-            this.dtg_OrderDetail.Size = new System.Drawing.Size(334, 350);
+            this.dtg_OrderDetail.Size = new System.Drawing.Size(445, 431);
             this.dtg_OrderDetail.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.bt_cancel);
             this.panel3.Controls.Add(this.bt_pay);
-            this.panel3.Location = new System.Drawing.Point(460, 607);
+            this.panel3.Location = new System.Drawing.Point(613, 747);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(340, 90);
+            this.panel3.Size = new System.Drawing.Size(453, 111);
             this.panel3.TabIndex = 3;
             // 
             // bt_cancel
             // 
-            this.bt_cancel.Location = new System.Drawing.Point(12, 15);
+            this.bt_cancel.Location = new System.Drawing.Point(16, 18);
+            this.bt_cancel.Margin = new System.Windows.Forms.Padding(4);
             this.bt_cancel.Name = "bt_cancel";
-            this.bt_cancel.Size = new System.Drawing.Size(101, 59);
+            this.bt_cancel.Size = new System.Drawing.Size(135, 73);
             this.bt_cancel.TabIndex = 5;
             this.bt_cancel.Text = "Hủy bỏ";
             this.bt_cancel.UseVisualStyleBackColor = true;
@@ -396,9 +384,10 @@
             // 
             // bt_pay
             // 
-            this.bt_pay.Location = new System.Drawing.Point(236, 15);
+            this.bt_pay.Location = new System.Drawing.Point(315, 18);
+            this.bt_pay.Margin = new System.Windows.Forms.Padding(4);
             this.bt_pay.Name = "bt_pay";
-            this.bt_pay.Size = new System.Drawing.Size(101, 59);
+            this.bt_pay.Size = new System.Drawing.Size(135, 73);
             this.bt_pay.TabIndex = 5;
             this.bt_pay.Text = "Thanh toán";
             this.bt_pay.UseVisualStyleBackColor = true;
@@ -406,14 +395,15 @@
             // 
             // num_quantity
             // 
-            this.num_quantity.Location = new System.Drawing.Point(97, 24);
+            this.num_quantity.Location = new System.Drawing.Point(129, 30);
+            this.num_quantity.Margin = new System.Windows.Forms.Padding(4);
             this.num_quantity.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.num_quantity.Name = "num_quantity";
-            this.num_quantity.Size = new System.Drawing.Size(134, 20);
+            this.num_quantity.Size = new System.Drawing.Size(179, 22);
             this.num_quantity.TabIndex = 4;
             this.num_quantity.Value = new decimal(new int[] {
             1,
@@ -423,18 +413,43 @@
             // 
             // panel5
             // 
-            this.panel5.Location = new System.Drawing.Point(460, 478);
+            this.panel5.Controls.Add(this.txt_OrderID);
+            this.panel5.Controls.Add(this.lb_TotalOrder);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.txt_empId);
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Location = new System.Drawing.Point(613, 588);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(340, 123);
+            this.panel5.Size = new System.Drawing.Size(453, 151);
             this.panel5.TabIndex = 5;
+            // 
+            // lb_TotalOrder
+            // 
+            this.lb_TotalOrder.AutoSize = true;
+            this.lb_TotalOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_TotalOrder.Location = new System.Drawing.Point(287, 103);
+            this.lb_TotalOrder.Name = "lb_TotalOrder";
+            this.lb_TotalOrder.Size = new System.Drawing.Size(26, 29);
+            this.lb_TotalOrder.TabIndex = 2;
+            this.lb_TotalOrder.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(212, 113);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 16);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Tổng tiền: ";
             // 
             // lb_username
             // 
             this.lb_username.AutoSize = true;
-            this.lb_username.Location = new System.Drawing.Point(706, 9);
-            this.lb_username.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_username.Location = new System.Drawing.Point(941, 11);
             this.lb_username.Name = "lb_username";
-            this.lb_username.Size = new System.Drawing.Size(35, 13);
+            this.lb_username.Size = new System.Drawing.Size(44, 16);
             this.lb_username.TabIndex = 6;
             this.lb_username.Text = "label1";
             // 
@@ -446,68 +461,66 @@
             this.groupBox2.Controls.Add(this.labelOrder);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Location = new System.Drawing.Point(460, 27);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Location = new System.Drawing.Point(613, 33);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(340, 84);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(453, 103);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thêm sản phẩm";
             // 
             // btn_addOrderDetail
             // 
-            this.btn_addOrderDetail.Location = new System.Drawing.Point(236, 14);
+            this.btn_addOrderDetail.Location = new System.Drawing.Point(315, 17);
+            this.btn_addOrderDetail.Margin = new System.Windows.Forms.Padding(4);
             this.btn_addOrderDetail.Name = "btn_addOrderDetail";
-            this.btn_addOrderDetail.Size = new System.Drawing.Size(87, 38);
+            this.btn_addOrderDetail.Size = new System.Drawing.Size(116, 47);
             this.btn_addOrderDetail.TabIndex = 5;
-            this.btn_addOrderDetail.Text = "Thêm Hóa đơn";
+            this.btn_addOrderDetail.Text = "Thêm vào Hóa đơn";
             this.btn_addOrderDetail.UseVisualStyleBackColor = true;
             this.btn_addOrderDetail.Click += new System.EventHandler(this.btn_addOrderDetail_Click);
             // 
             // txt_IDproductDetail
             // 
-            this.txt_IDproductDetail.Location = new System.Drawing.Point(97, 54);
-            this.txt_IDproductDetail.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_IDproductDetail.Location = new System.Drawing.Point(129, 66);
+            this.txt_IDproductDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_IDproductDetail.Name = "txt_IDproductDetail";
-            this.txt_IDproductDetail.Size = new System.Drawing.Size(76, 20);
+            this.txt_IDproductDetail.Size = new System.Drawing.Size(100, 22);
             this.txt_IDproductDetail.TabIndex = 3;
             // 
             // labelOrder
             // 
             this.labelOrder.AutoSize = true;
-            this.labelOrder.Location = new System.Drawing.Point(190, 54);
-            this.labelOrder.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelOrder.Location = new System.Drawing.Point(253, 66);
             this.labelOrder.Name = "labelOrder";
-            this.labelOrder.Size = new System.Drawing.Size(65, 13);
+            this.labelOrder.Size = new System.Drawing.Size(78, 16);
             this.labelOrder.TabIndex = 2;
             this.labelOrder.Text = "Mã hóa đơn";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(10, 54);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(13, 66);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 13);
+            this.label10.Size = new System.Drawing.Size(94, 16);
             this.label10.TabIndex = 2;
             this.label10.Text = "Mã sản phẩm :";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(31, 26);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(41, 32);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.Size = new System.Drawing.Size(66, 16);
             this.label9.TabIndex = 2;
             this.label9.Text = "Số lượng: ";
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 710);
+            this.ClientSize = new System.Drawing.Size(1083, 874);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.lb_username);
             this.Controls.Add(this.panel5);
@@ -515,7 +528,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CỬA HÀNG ĐỒNG HỒ";
@@ -531,6 +544,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtg_OrderDetail)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.num_quantity)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -565,13 +580,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_phone;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btn_addOrder;
         private System.Windows.Forms.TextBox txt_empId;
         private System.Windows.Forms.TextBox txt_OrderID;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_CusIDORder;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dtg_OrderDetail;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btn_addOrderDetail;
@@ -582,6 +594,11 @@
         private System.Windows.Forms.ToolStripMenuItem danhSáchHóaĐơnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nhânViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sảnPhẩmToolStripMenuItem;
+        private System.Windows.Forms.Label lb_TotalOrder;
+        private System.Windows.Forms.Label label1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ComboBox cb_search;
+        private System.Windows.Forms.TextBox tb_search;
     }
 }
 
