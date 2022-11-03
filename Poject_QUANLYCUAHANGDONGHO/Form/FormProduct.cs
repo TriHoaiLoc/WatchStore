@@ -88,7 +88,7 @@ namespace Project_QUANLYCUAHANGDONGHO
         private void ShowProduct1()
         {
             ProductDAO productDAO = new ProductDAO();
-            dataGridView1.DataSource = productDAO.ShowProduct1();
+            dataGridView1.DataSource = productDAO.ShowProduct();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

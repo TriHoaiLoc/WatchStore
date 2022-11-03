@@ -26,12 +26,6 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
             return conn.ExecuteReader(query);
         }
 
-        public DataTable ShowProduct1()
-        {
-            string query = "SHOW_PRODUCT_2";
-            return conn.ExecuteReader(query);
-        }
-
         public void AddProduct(string name, string categoryID, int quanity, int price, string colorID, string sizeID, string brandID)
         {
             string query = "ADD_PRODUCT";

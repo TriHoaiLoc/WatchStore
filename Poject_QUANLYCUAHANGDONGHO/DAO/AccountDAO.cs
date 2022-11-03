@@ -18,5 +18,9 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
         {
             conn = new DBConnection();
         }
+        public Object getAccount(Account account)
+        {
+            return null;
+        }
     }
 }
