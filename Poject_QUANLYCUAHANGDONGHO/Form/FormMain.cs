@@ -38,7 +38,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             
             formLogin = new FormLogin();
             formLogin.formMain = this;
-            formLogin.ShowDialog();
+            formLogin.ShowDialog();  
             if (office == "Admin")
             {
                 //MainEnabled();
@@ -57,12 +57,11 @@ namespace Project_QUANLYCUAHANGDONGHO
             FormAccount formAccount = new FormAccount();
             formAccount.ShowDialog();
         }
-
+        //restart when logout
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Restart();
         }
-
         private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormCustomer formCustomer = new FormCustomer();
@@ -84,19 +83,15 @@ namespace Project_QUANLYCUAHANGDONGHO
             }
 
             orderDAO.createOrder(txt_CusID.Text, txt_empId.Text);
-
             object reader2 = orderDAO.showLastOrder();
-
-          txt_OrderID.Text=reader2.ToString();
+            txt_OrderID.Text=reader2.ToString();
         }
 
         public void ShowIDofEmployee()
         {
             EmployeeDAO employee = new EmployeeDAO();
-           
             object reader = employee.FindEmployeeID(lb_username.Text);
-
-           txt_empId.Text=reader.ToString();
+            txt_empId.Text= reader.ToString();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -105,7 +100,6 @@ namespace Project_QUANLYCUAHANGDONGHO
             {
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                 txt_IDproductDetail.Text = row.Cells["ProductID"].Value.ToString();
-
             }
         }
             
@@ -129,11 +123,6 @@ namespace Project_QUANLYCUAHANGDONGHO
                 orderDAO.ThanhToan(txt_OrderID.Text);
                 resetForm();
             }
-
-            
-
-           
-
         }
         public void resetForm()
         {
@@ -202,5 +191,6 @@ namespace Project_QUANLYCUAHANGDONGHO
             ProductDAO productDAO = new ProductDAO();
             dataGridView1.DataSource = productDAO.SearchProductName(cb_search.Text, tb_search.Text);
         }
+
     }
 }

@@ -21,26 +21,18 @@ namespace Project_QUANLYCUAHANGDONGHO
             InitializeComponent();
         }
 
-        private void bt_Exit_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
-            {
-                Application.Exit();
-            }
-        }
-
         private void bt_login_Click(object sender, EventArgs e)
         {
             AccountDAO accountDAO = new AccountDAO();
             Account account = new Account();
             account = accountDAO.GetAccount(tb_username.Text, tb_password.Text);
+
             if (account != null)
             {
-                formMain.office = (radio_admin.Checked ? radio_admin.Text : radio_Emp.Text);
+                formMain.office = accountDAO.GetOffice(account.EmployeeID).ToString();
                 formMain.Username = account.Username;
                 formMain.empID = account.EmployeeID;
-                MessageBox.Show(account.Username + account.Password + account.EmployeeID);
-                this.Close();
+                this.Hide();
             }
             else
             {
@@ -48,6 +40,28 @@ namespace Project_QUANLYCUAHANGDONGHO
                 tb_password.ResetText();
                 tb_password.Focus();
             }
+        }
+
+        private void bt_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (bt_login.Enabled)
+            {
+                e.Cancel = false;
+            }
+            else if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

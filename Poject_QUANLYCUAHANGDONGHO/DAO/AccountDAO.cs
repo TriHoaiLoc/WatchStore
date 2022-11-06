@@ -33,6 +33,10 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
         //get account when login
         public Account GetAccount(string username, string passwd)
         {
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(passwd))
+            {
+                return null;
+            }
             string query = "GET_ACCOUNT";
             SqlParameter[] parameters =
             {
@@ -53,6 +57,13 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
             {
                 return null;
             }
+        }
+
+        public object GetOffice(string empID)
+        {
+            string query = "GET_OFFICE";
+            SqlParameter[] sqlParameters = {new SqlParameter("@empID", SqlDbType.NVarChar, 10) { Value = empID }};
+            return conn.ExecuteScalar(query, sqlParameters);
         }
     }
 }

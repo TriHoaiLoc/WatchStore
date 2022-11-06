@@ -31,7 +31,7 @@ namespace Project_QUANLYCUAHANGDONGHO
         {
             this.tabcontrolAdmin = new System.Windows.Forms.TabControl();
             this.tab_Order = new System.Windows.Forms.TabPage();
-            this.tab_Product = new System.Windows.Forms.TabPage();
+            this.tab_Emp = new System.Windows.Forms.TabPage();
             this.tab_Account = new System.Windows.Forms.TabPage();
             this.tabcontrolAdmin.SuspendLayout();
             this.SuspendLayout();
@@ -39,7 +39,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             // tabcontrolAdmin
             // 
             this.tabcontrolAdmin.Controls.Add(this.tab_Order);
-            this.tabcontrolAdmin.Controls.Add(this.tab_Product);
+            this.tabcontrolAdmin.Controls.Add(this.tab_Emp);
             this.tabcontrolAdmin.Controls.Add(this.tab_Account);
             this.tabcontrolAdmin.Location = new System.Drawing.Point(12, 12);
             this.tabcontrolAdmin.Name = "tabcontrolAdmin";
@@ -52,20 +52,20 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.tab_Order.Location = new System.Drawing.Point(4, 22);
             this.tab_Order.Name = "tab_Order";
             this.tab_Order.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Order.Size = new System.Drawing.Size(768, 561);
+            this.tab_Order.Size = new System.Drawing.Size(653, 450);
             this.tab_Order.TabIndex = 0;
             this.tab_Order.Text = "Doanh thu";
             this.tab_Order.UseVisualStyleBackColor = true;
             // 
-            // tab_Product
+            // tab_Emp
             // 
-            this.tab_Product.Location = new System.Drawing.Point(4, 22);
-            this.tab_Product.Name = "tab_Product";
-            this.tab_Product.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Product.Size = new System.Drawing.Size(768, 561);
-            this.tab_Product.TabIndex = 1;
-            this.tab_Product.Text = "Sản phẩm";
-            this.tab_Product.UseVisualStyleBackColor = true;
+            this.tab_Emp.Location = new System.Drawing.Point(4, 22);
+            this.tab_Emp.Name = "tab_Emp";
+            this.tab_Emp.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_Emp.Size = new System.Drawing.Size(653, 450);
+            this.tab_Emp.TabIndex = 1;
+            this.tab_Emp.Text = "Nhân viên";
+            this.tab_Emp.UseVisualStyleBackColor = true;
             // 
             // tab_Account
             // 
@@ -94,7 +94,7 @@ namespace Project_QUANLYCUAHANGDONGHO
 
         private System.Windows.Forms.TabControl tabcontrolAdmin;
         private System.Windows.Forms.TabPage tab_Order;
-        private System.Windows.Forms.TabPage tab_Product;
+        private System.Windows.Forms.TabPage tab_Emp;
         private System.Windows.Forms.TabPage tab_Account;
     }
 }

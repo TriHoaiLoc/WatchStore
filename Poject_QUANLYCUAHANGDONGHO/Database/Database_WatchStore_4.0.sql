@@ -238,7 +238,18 @@ AS
 	BEGIN
 		SELECT *
 		FROM Systems
-		WHERE username = @username AND passwd = @passwd
+		WHERE CAST(username as binary) = CAST(@username as binary) 
+		AND CAST(passwd as binary) = CAST(@passwd as binary)
+	END
+GO
+--====== TẠO PROCEDURE TẠO lấy JOBNAME ======----
+CREATE PROC GET_OFFICE
+@empID NVARCHAR(10)
+AS
+	BEGIN
+		SELECT JobName
+		FROM JOBS JOIN Employees ON JOBS.JobID = Employees.JobID 
+		WHERE Employees.EmployeeID = @empID
 	END
 GO
 --====== TẠO PROCEDURE TẠO HÓA ĐƠN ======----

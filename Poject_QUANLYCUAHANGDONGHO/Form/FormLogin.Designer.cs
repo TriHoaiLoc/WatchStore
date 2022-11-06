@@ -33,8 +33,6 @@
             this.lb_password = new System.Windows.Forms.Label();
             this.tb_username = new System.Windows.Forms.TextBox();
             this.lb_username = new System.Windows.Forms.Label();
-            this.radio_Emp = new System.Windows.Forms.RadioButton();
-            this.radio_admin = new System.Windows.Forms.RadioButton();
             this.bt_login = new System.Windows.Forms.Button();
             this.bt_Exit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -98,31 +96,6 @@
             this.lb_username.TabIndex = 3;
             this.lb_username.Text = "Tài khoản:";
             // 
-            // radio_Emp
-            // 
-            this.radio_Emp.AutoSize = true;
-            this.radio_Emp.Checked = true;
-            this.radio_Emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radio_Emp.Location = new System.Drawing.Point(440, 56);
-            this.radio_Emp.Name = "radio_Emp";
-            this.radio_Emp.Size = new System.Drawing.Size(86, 20);
-            this.radio_Emp.TabIndex = 3;
-            this.radio_Emp.TabStop = true;
-            this.radio_Emp.Text = "Nhân viên";
-            this.radio_Emp.UseVisualStyleBackColor = true;
-            // 
-            // radio_admin
-            // 
-            this.radio_admin.AutoSize = true;
-            this.radio_admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radio_admin.Location = new System.Drawing.Point(440, 94);
-            this.radio_admin.Name = "radio_admin";
-            this.radio_admin.Size = new System.Drawing.Size(64, 20);
-            this.radio_admin.TabIndex = 4;
-            this.radio_admin.TabStop = true;
-            this.radio_admin.Text = "Admin";
-            this.radio_admin.UseVisualStyleBackColor = true;
-            // 
             // bt_login
             // 
             this.bt_login.Location = new System.Drawing.Point(295, 184);
@@ -150,19 +123,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_Exit;
-            this.ClientSize = new System.Drawing.Size(594, 260);
+            this.ClientSize = new System.Drawing.Size(459, 260);
             this.Controls.Add(this.bt_Exit);
             this.Controls.Add(this.bt_login);
-            this.Controls.Add(this.radio_admin);
-            this.Controls.Add(this.radio_Emp);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLogin_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLogin_FormClosed);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -172,8 +144,6 @@
         private System.Windows.Forms.Label lb_username;
         private System.Windows.Forms.Label lb_password;
         private System.Windows.Forms.TextBox tb_username;
-        private System.Windows.Forms.RadioButton radio_Emp;
-        private System.Windows.Forms.RadioButton radio_admin;
         private System.Windows.Forms.Button bt_login;
         private System.Windows.Forms.Button bt_Exit;
     }
