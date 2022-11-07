@@ -379,11 +379,11 @@ CREATE PROC ADD_EMPLOYEE
 @DOB DATETIME,
 @PHONE NVARCHAR(20),
 @ADDRESS NVARCHAR(50),
-@JOBID NVARCHAR(10),
-@EMAIL NVARCHAR(10)
+@EMAIL NVARCHAR(50),
+@JOBID NVARCHAR(10)
+
 AS
-	
-	BEGIN
+BEGIN
 	BEGIN TRAN
 	SAVE TRANSACTION MySavePoint;
 	IF @EMAIL like '_%@__%.__%'
@@ -395,8 +395,7 @@ AS
 			print 'SAI EMAIL'
 				ROLLBACK TRAN MySavePoint
 			END
-		COMMIT TRANSACTION 	
-
+COMMIT TRANSACTION 	
 END
 GO
 ------====== UPDATE NHÂN VIÊN======----
@@ -413,6 +412,11 @@ CREATE PROC UPDATE_EMPLOYEE
 AS
 
 BEGIN
+	BEGIN TRAN
+	SAVE TRANSACTION MySavePoint;
+	
+	IF @EMAIL like '_%@__%.__%'
+		BEGIN
 				UPDATE Employees
 			   SET EmployeeName = @NAME,
 				 EmployeeGender = @GENDER,
@@ -423,6 +427,14 @@ BEGIN
 				 JobID = @JOBID
 			WHERE EmployeeID = @EMPID
 		END
+	ELSE
+	BEGIN
+			print 'SAI EMAIL'
+				ROLLBACK TRAN MySavePoint
+			END
+COMMIT TRANSACTION 	
+
+END
 GO
 
 ------====== DELETE NHÂN VIÊN======----
@@ -468,13 +480,26 @@ CREATE PROC UPDATE_CUSTOMER
 @EMAIL NVARCHAR(50)
 AS
 BEGIN
-	UPDATE Customers SET 
-		CustomerName = @NAME,
-		CustomerGender = @GENDER,
-		CustomerAddress = @ADDRESS,
-		CustomerPhone = @PHONE,
-		CustomerEmail = @EMAIL
-	WHERE CustomerID = @CUSID
+BEGIN TRAN
+	SAVE TRANSACTION MySavePoint;
+	
+	IF @EMAIL like '_%@__%.__%'
+		BEGIN
+			UPDATE Customers SET 
+				CustomerName = @NAME,
+				CustomerGender = @GENDER,
+				CustomerAddress = @ADDRESS,
+				CustomerPhone = @PHONE,
+				CustomerEmail = @EMAIL
+			WHERE CustomerID = @CUSID
+		END
+	ELSE
+	BEGIN
+			print 'SAI EMAIL'
+				ROLLBACK TRAN MySavePoint
+			END
+COMMIT TRANSACTION 	
+
 END
 GO
 ------====== DELETE KHÁCH HÀNG======----
@@ -746,19 +771,19 @@ GO
 --SELECT * FROM OrderDetails
 --EXEC DELETE_RECEPIT 'ORD2'
 
-GO
-DECLARE 
-@id NVARCHAR(10)='EMP2',
-@NAME NVARCHAR(50)='A',
-@GENDER NVARCHAR(10)='Nam',
-@DOB DATETIME='1999-11-2',
-@PHONE NVARCHAR(20)='093919311',
-@ADDRESS NVARCHAR(50)='Da Nang',
-@JOBID NVARCHAR(10)='JOB1',
-@EMAIL NVARCHAR (50)='admin123@gmail.com'
+--GO
+--DECLARE 
 
-EXEC UPDATE_EMPLOYEE @id,@NAME, @GENDER, @DOB, @PHONE, @ADDRESS,@EMAIL, @JOBID;
+--@NAME NVARCHAR(50)='AASDASD',
+--@GENDER NVARCHAR(10)='Nam',
+--@DOB DATETIME='1999-11-2',
+--@PHONE NVARCHAR(20)='093919311',
+--@ADDRESS NVARCHAR(50)='Da Nang',
+--@JOBID NVARCHAR(10)='JOB1',
+--@EMAIL NVARCHAR (50)='admin123@gmail.com'
 
+--EXEC ADD_EMPLOYEE @NAME, @GENDER, @DOB, @PHONE, @ADDRESS,@EMAIL, @JOBID;
+--SELECT* FROM Employees
 --GO
 --SELECT* FROM Products
 --SELECT * FROM Orders

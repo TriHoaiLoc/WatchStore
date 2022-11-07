@@ -44,18 +44,18 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
         }
 
 
-        public void AddEmployee(string name, string gender, string dob, string phone, string addr, string email, string jobid)
+        public void AddEmployee(string txtboxnameempl, string comboxgenderempl, string txtboxdobempl, string txtboxphoneempl, string txtboxaddrempl, string txtboxemailempl, string txtboxjobid)
         {
             string query = "ADD_EMPLOYEE";
             SqlParameter[] parameters =
                 {
-                new SqlParameter("@NAME", SqlDbType.NVarChar, 50) { Value = name},
-                new SqlParameter("@GENDER", SqlDbType.NVarChar, 10) { Value = gender},
-                new SqlParameter("@DOB", SqlDbType.DateTime) { Value = dob},
-                new SqlParameter("@PHONE", SqlDbType.NVarChar, 20) { Value = phone},
-                new SqlParameter("@ADDRESS", SqlDbType.NVarChar, 50) { Value = addr},
-                new SqlParameter("@EMAIL", SqlDbType.NVarChar, 50) { Value = email},
-                new SqlParameter("@JOBID", SqlDbType.NVarChar, 10) { Value = jobid}
+                new SqlParameter("@NAME", SqlDbType.NVarChar, 50) { Value = txtboxnameempl},
+                new SqlParameter("@GENDER", SqlDbType.NVarChar, 10) { Value = comboxgenderempl},
+                new SqlParameter("@DOB", SqlDbType.DateTime) { Value = txtboxdobempl},
+                new SqlParameter("@PHONE", SqlDbType.NVarChar, 20) { Value = txtboxphoneempl},
+                new SqlParameter("@ADDRESS", SqlDbType.NVarChar, 50) { Value = txtboxaddrempl},
+                new SqlParameter("@EMAIL", SqlDbType.NVarChar, 50) { Value = txtboxemailempl},
+                new SqlParameter("@JOBID", SqlDbType.NVarChar, 10) { Value = txtboxjobid}
                 };
             //cmd.Parameters.Add(new SqlParameter("@Name", TextBox1));
             conn.ExecuteNonQuery(query, parameters);
