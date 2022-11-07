@@ -63,6 +63,7 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
         public void EditEmployee(string id, string name, string gender, string dob, string phone, string addr, string email, string jobid)
         {
             string query = "UPDATE_EMPLOYEE";
+            
             SqlParameter[] parameters =
                 {
                 new SqlParameter("@EMPID", SqlDbType.NVarChar, 10) { Value = id},

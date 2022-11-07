@@ -63,7 +63,7 @@ namespace Project_QUANLYCUAHANGDONGHO
         private void button2_Click(object sender, EventArgs e)
         {
             EmployeeDAO employeeDAO = new EmployeeDAO();
-            employeeDAO.EditEmployee(txtemplid.Text, txtboxnameempl.Text, comboxgenderempl.Text, txtboxdobempl.Text, txtboxphoneempl.Text, txtboxaddrempl.Text, txtemplid.Text, txtboxjobid.Text);
+            employeeDAO.EditEmployee(txtemplid.Text, txtboxnameempl.Text, comboxgenderempl.Text, txtboxdobempl.Text, txtboxphoneempl.Text, txtboxaddrempl.Text, txtboxemailempl.Text, txtboxjobid.Text);
             ShowEmployee();
         }
 
