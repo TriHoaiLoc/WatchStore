@@ -26,7 +26,12 @@ namespace Project_QUANLYCUAHANGDONGHO
             dtg_Order.DataSource= orderDAO.showAllOrder();
         }
 
-        private void dtg_Order_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btn_findOrder_Click(object sender, EventArgs e)
+        {
+            dtg_OrderDetail.DataSource = orderDetail.showOrderDetail(txt_Order.Text);
+        }
+
+        private void dtg_Order_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -34,11 +39,6 @@ namespace Project_QUANLYCUAHANGDONGHO
                 txt_Order.Text = row.Cells["OrderID"].Value.ToString();
             }
 
-            dtg_OrderDetail.DataSource = orderDetail.showOrderDetail(txt_Order.Text);
-        }
-
-        private void btn_findOrder_Click(object sender, EventArgs e)
-        {
             dtg_OrderDetail.DataSource = orderDetail.showOrderDetail(txt_Order.Text);
         }
     }

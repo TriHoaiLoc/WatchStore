@@ -192,7 +192,7 @@
             this.cb_search.Font = new System.Drawing.Font("Calibri", 14.25F);
             this.cb_search.FormattingEnabled = true;
             this.cb_search.Location = new System.Drawing.Point(327, 128);
-            this.cb_search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_search.Margin = new System.Windows.Forms.Padding(2);
             this.cb_search.Name = "cb_search";
             this.cb_search.Size = new System.Drawing.Size(92, 31);
             this.cb_search.TabIndex = 11;
@@ -221,9 +221,9 @@
             this.groupBox1.Controls.Add(this.btn_FindCus);
             this.groupBox1.Controls.Add(this.txt_FindCus);
             this.groupBox1.Location = new System.Drawing.Point(2, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(437, 102);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -232,7 +232,7 @@
             // txt_CusID
             // 
             this.txt_CusID.Location = new System.Drawing.Point(135, 80);
-            this.txt_CusID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_CusID.Margin = new System.Windows.Forms.Padding(2);
             this.txt_CusID.Name = "txt_CusID";
             this.txt_CusID.ReadOnly = true;
             this.txt_CusID.Size = new System.Drawing.Size(76, 20);
@@ -241,7 +241,7 @@
             // txt_phone
             // 
             this.txt_phone.Location = new System.Drawing.Point(305, 56);
-            this.txt_phone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_phone.Margin = new System.Windows.Forms.Padding(2);
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.ReadOnly = true;
             this.txt_phone.Size = new System.Drawing.Size(76, 20);
@@ -250,7 +250,7 @@
             // txt_NameCus
             // 
             this.txt_NameCus.Location = new System.Drawing.Point(135, 54);
-            this.txt_NameCus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_NameCus.Margin = new System.Windows.Forms.Padding(2);
             this.txt_NameCus.Name = "txt_NameCus";
             this.txt_NameCus.ReadOnly = true;
             this.txt_NameCus.Size = new System.Drawing.Size(76, 20);
@@ -299,7 +299,7 @@
             // btn_FindCus
             // 
             this.btn_FindCus.Location = new System.Drawing.Point(287, 22);
-            this.btn_FindCus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_FindCus.Margin = new System.Windows.Forms.Padding(2);
             this.btn_FindCus.Name = "btn_FindCus";
             this.btn_FindCus.Size = new System.Drawing.Size(56, 19);
             this.btn_FindCus.TabIndex = 1;
@@ -310,7 +310,7 @@
             // txt_FindCus
             // 
             this.txt_FindCus.Location = new System.Drawing.Point(135, 23);
-            this.txt_FindCus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_FindCus.Margin = new System.Windows.Forms.Padding(2);
             this.txt_FindCus.Name = "txt_FindCus";
             this.txt_FindCus.Size = new System.Drawing.Size(149, 20);
             this.txt_FindCus.TabIndex = 0;
@@ -319,7 +319,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(0, 164);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -331,7 +331,7 @@
             // txt_empId
             // 
             this.txt_empId.Location = new System.Drawing.Point(103, 21);
-            this.txt_empId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_empId.Margin = new System.Windows.Forms.Padding(2);
             this.txt_empId.Name = "txt_empId";
             this.txt_empId.ReadOnly = true;
             this.txt_empId.Size = new System.Drawing.Size(76, 20);
@@ -340,7 +340,7 @@
             // txt_OrderID
             // 
             this.txt_OrderID.Location = new System.Drawing.Point(103, 57);
-            this.txt_OrderID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_OrderID.Margin = new System.Windows.Forms.Padding(2);
             this.txt_OrderID.Name = "txt_OrderID";
             this.txt_OrderID.ReadOnly = true;
             this.txt_OrderID.Size = new System.Drawing.Size(76, 20);
@@ -378,10 +378,11 @@
             // 
             this.dtg_OrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_OrderDetail.Location = new System.Drawing.Point(0, 2);
-            this.dtg_OrderDetail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtg_OrderDetail.Margin = new System.Windows.Forms.Padding(2);
             this.dtg_OrderDetail.Name = "dtg_OrderDetail";
             this.dtg_OrderDetail.RowHeadersWidth = 51;
             this.dtg_OrderDetail.RowTemplate.Height = 24;
+            this.dtg_OrderDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtg_OrderDetail.Size = new System.Drawing.Size(379, 352);
             this.dtg_OrderDetail.TabIndex = 0;
             // 
@@ -467,9 +468,9 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Location = new System.Drawing.Point(460, 30);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(381, 94);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
@@ -488,7 +489,7 @@
             // txt_IDproductDetail
             // 
             this.txt_IDproductDetail.Location = new System.Drawing.Point(97, 54);
-            this.txt_IDproductDetail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_IDproductDetail.Margin = new System.Windows.Forms.Padding(2);
             this.txt_IDproductDetail.Name = "txt_IDproductDetail";
             this.txt_IDproductDetail.Size = new System.Drawing.Size(76, 20);
             this.txt_IDproductDetail.TabIndex = 3;
@@ -535,7 +536,7 @@
             this.Controls.Add(this.bt_pay);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CỬA HÀNG ĐỒNG HỒ";

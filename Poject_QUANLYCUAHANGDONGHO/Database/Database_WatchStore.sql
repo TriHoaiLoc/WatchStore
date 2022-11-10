@@ -1,8 +1,8 @@
-﻿ USE master
- GO
+﻿-- USE master
+-- GO
 
- DROP DATABASE WatchStore
- GO
+-- DROP DATABASE WatchStore
+-- GO
 
 CREATE DATABASE WatchStore
 GO
@@ -40,7 +40,6 @@ CREATE TABLE Employees(
 	JobID NVARCHAR(10) NOT NULL,
 
 	CONSTRAINT PK_EMPLOYEE PRIMARY KEY CLUSTERED (EmployeeID),
-	--CONSTRAINT [CK_Account_EmployeeEmail] CHECK ([EmployeeEmail] like '%_@%_._%')
 )
 GO
 
@@ -239,18 +238,7 @@ AS
 	BEGIN
 		SELECT *
 		FROM Systems
-		WHERE CAST(username as binary) = CAST(@username as binary) 
-		AND CAST(passwd as binary) = CAST(@passwd as binary)
-	END
-GO
---====== TẠO PROCEDURE TẠO lấy JOBNAME ======----
-CREATE PROC GET_OFFICE
-@empID NVARCHAR(10)
-AS
-	BEGIN
-		SELECT JobName
-		FROM JOBS JOIN Employees ON JOBS.JobID = Employees.JobID 
-		WHERE Employees.EmployeeID = @empID
+		WHERE username = @username AND passwd = @passwd
 	END
 GO
 --====== TẠO PROCEDURE TẠO HÓA ĐƠN ======----
@@ -266,7 +254,7 @@ GO
 CREATE PROC SELECT_NEW_ORDER
 AS
 	BEGIN
-		SELECT TOP 1 OrderID FROM Orders ORDER BY OrderID DESC
+		SELECT TOP 1 OrderID,EmployeeID,CustomerID FROM Orders ORDER BY OrderID DESC
 	END
 GO
 --====== TẠO PROCEDURE XÓA HÓA ĐƠN======----
@@ -307,20 +295,6 @@ AS
 		SELECT * FROM OrderDetails WHERE OrderID=@ORDERID
 	END
 GO
-CREATE PROCEDURE THANHTOAN_TAMTHOI 
-@ORDERID NVARCHAR(10)
-as 
-BEGIN
-	DECLARE @TIEN INT
-	SET @TIEN= (SELECT SUM(OrderDetails.UntilPrice*OrderDetails.OrderQuantity)
-				FROM OrderDetails
-				WHERE OrderDetails.OrderID=@ORDERID)
-				
-	select @TIEN
-END
-
-GO
-
 ----====== THANH TOÁN HÓA ĐƠN======----
 CREATE PROCEDURE THANHTOAN 
 @ORDERID NVARCHAR(10)
@@ -332,7 +306,9 @@ BEGIN
 
     SAVE TRANSACTION MySavePoint;
 	BEGIN TRY
-		
+		--SET @ORDERID=(SELECT TOP 1 ID 
+		--		FROM HOADON 
+		--		 ORDER BY ID DESC)
 	SET @TIEN= (SELECT SUM(OrderDetails.UntilPrice*OrderDetails.OrderQuantity)
 				FROM OrderDetails
 				WHERE OrderDetails.OrderID=@ORDERID)
@@ -379,24 +355,12 @@ CREATE PROC ADD_EMPLOYEE
 @DOB DATETIME,
 @PHONE NVARCHAR(20),
 @ADDRESS NVARCHAR(50),
-@EMAIL NVARCHAR(50),
-@JOBID NVARCHAR(10)
-
+@JOBID NVARCHAR(10),
+@EMAIL NVARCHAR(10)
 AS
-BEGIN
-	BEGIN TRAN
-	SAVE TRANSACTION MySavePoint;
-	IF @EMAIL like '_%@__%.__%'
 	BEGIN
-				INSERT INTO Employees VALUES (@NAME,@GENDER,@DOB,@PHONE,@ADDRESS,@EMAIL,@JOBID)
+		INSERT INTO Employees VALUES (@NAME,@GENDER,@DOB,@PHONE,@ADDRESS,@EMAIL,@JOBID)
 	END
-	ELSE
-	BEGIN
-			print 'SAI EMAIL'
-				ROLLBACK TRAN MySavePoint
-			END
-COMMIT TRANSACTION 	
-END
 GO
 ------====== UPDATE NHÂN VIÊN======----
 CREATE PROC UPDATE_EMPLOYEE
@@ -408,32 +372,17 @@ CREATE PROC UPDATE_EMPLOYEE
 @ADDRESS NVARCHAR(50),
 @EMAIL NVARCHAR(50),
 @JOBID NVARCHAR(10)
-
 AS
-
-BEGIN
-	BEGIN TRAN
-	SAVE TRANSACTION MySavePoint;
-	
-	IF @EMAIL like '_%@__%.__%'
-		BEGIN
-				UPDATE Employees
-			   SET EmployeeName = @NAME,
-				 EmployeeGender = @GENDER,
-				  EmployeeDoB = @DOB,
-				  EmployeePhone = @PHONE,
-				  EmployeeAddress = @ADDRESS,
-				 EmployeeEmail = @EMAIL ,
-				 JobID = @JOBID
-			WHERE EmployeeID = @EMPID
-		END
-	ELSE
-	BEGIN
-			print 'SAI EMAIL'
-				ROLLBACK TRAN MySavePoint
-			END
-COMMIT TRANSACTION 	
-
+BEGIN		
+UPDATE Employees
+   SET EmployeeName = @NAME,
+     EmployeeGender = @GENDER,
+      EmployeeDoB = @DOB,
+      EmployeePhone = @PHONE,
+      EmployeeAddress = @ADDRESS,
+	 EmployeeEmail = @EMAIL ,
+	 JobID = @JOBID
+WHERE EmployeeID = @EMPID
 END
 GO
 
@@ -455,19 +404,7 @@ CREATE PROC ADD_CUSTOMER
 @EMAIL NVARCHAR(50)
 AS
 BEGIN
-	BEGIN TRAN
-	SAVE TRANSACTION MySavePoint;
-	IF @EMAIL like '_%@__%.__%'
-	BEGIN
-				INSERT INTO Customers VALUES (@NAME,@GENDER,@ADDRESS,@PHONE,@EMAIL)
-	END
-	ELSE
-	BEGIN
-			print 'SAI EMAIL'
-				ROLLBACK TRAN MySavePoint
-			END
-		COMMIT TRANSACTION 	
-
+INSERT INTO Customers VALUES (@NAME,@GENDER,@ADDRESS,@PHONE,@EMAIL)
 END
 GO
 ------====== UPDATE KHÁCH HÀNG======----
@@ -480,26 +417,13 @@ CREATE PROC UPDATE_CUSTOMER
 @EMAIL NVARCHAR(50)
 AS
 BEGIN
-BEGIN TRAN
-	SAVE TRANSACTION MySavePoint;
-	
-	IF @EMAIL like '_%@__%.__%'
-		BEGIN
-			UPDATE Customers SET 
-				CustomerName = @NAME,
-				CustomerGender = @GENDER,
-				CustomerAddress = @ADDRESS,
-				CustomerPhone = @PHONE,
-				CustomerEmail = @EMAIL
-			WHERE CustomerID = @CUSID
-		END
-	ELSE
-	BEGIN
-			print 'SAI EMAIL'
-				ROLLBACK TRAN MySavePoint
-			END
-COMMIT TRANSACTION 	
-
+	UPDATE Customers SET 
+		CustomerName = @NAME,
+		CustomerGender = @GENDER,
+		CustomerAddress = @ADDRESS,
+		CustomerPhone = @PHONE,
+		CustomerEmail = @EMAIL
+	WHERE CustomerID = @CUSID
 END
 GO
 ------====== DELETE KHÁCH HÀNG======----
@@ -527,16 +451,6 @@ CREATE PROC FIND_EMPLOYEE
 AS
 BEGIN
 	SELECT EmployeeName, EmployeeGender, EmployeeDoB,EmployeePhone,EmployeeAddress,EmployeeEmail,JobID
-	FROM Employees
-	WHERE  EmployeeName LIKE N'%'+@NAME +'%'
-END
-------====== SEARCH ID NHÂN VIÊN======----
-GO
-CREATE PROC FIND_EMPLOYEE_ID
-@NAME NVARCHAR(50)
-AS
-BEGIN
-	SELECT EmployeeID
 	FROM Employees
 	WHERE  EmployeeName LIKE N'%'+@NAME +'%'
 END
@@ -588,7 +502,7 @@ AS
 GO
 ------====== LỌC SẢN PHẨM======----
 CREATE PROC SEARCH_PRODUCT
-(@nameCol VARCHAR(50), @value NVARCHAR(50))
+(@nameCol VARCHAR(50), @value VARCHAR(50))
 AS
 IF(@nameCol LIKE 'Name')
 	BEGIN
@@ -652,13 +566,13 @@ GO
 
 --===== ADD DATA =====--
 --JOBS
-INSERT INTO JOBS VALUES(N'admin', 123)
+INSERT INTO JOBS VALUES(N'Admin', 50000000)
 INSERT INTO JOBS VALUES(N'Nhân viên 1', 11000000)
 INSERT INTO JOBS VALUES(N'Nhân viên 2', 12000000)
 INSERT INTO JOBS VALUES(N'Nhân viên 3', 13000000)
 --Employees
-INSERT INTO Employees VALUES(N'admin', N'Nam', '1999-10-10', '123', 'TPHCM', 'admin123@gmail.com', 'JOB1')
-INSERT INTO Employees VALUES(N'a', N'Nam', '1999-10-1', '123', 'TPHCM', 'nguyenvana123@gmail.com', 'JOB2')
+INSERT INTO Employees VALUES(N'Admin', N'Nam', '1999-10-10', '0123456789', 'TPHCM', 'admin123@gmail.com', 'JOB1')
+INSERT INTO Employees VALUES(N'Nguyễn Văn A', N'Nam', '1999-10-1', '01111111119', 'TPHCM', 'nguyenvana123@gmail.com', 'JOB2')
 INSERT INTO Employees VALUES(N'Nguyễn Văn B', N'Nam', '1999-10-2', '01111111118', 'TPHCM', 'nguyenvanb123@gmail.com', 'JOB2')
 INSERT INTO Employees VALUES(N'Nguyễn Văn C', N'Nữ', '1999-10-3', '01111111117', 'TPHCM', 'nguyenvanc123@gmail.com', 'JOB2')
 INSERT INTO Employees VALUES(N'Nguyễn Văn D', N'Nữ', '1999-10-4', '01111111116', 'TPHCM', 'nguyenvand123@gmail.com', 'JOB3')
@@ -733,7 +647,7 @@ INSERT INTO Products VALUES(N'Omega 2022', 'CATE1',50, 300000, 'PROCO4', 'PROSI2
 INSERT INTO Products VALUES(N'Omega 2022', 'CATE1',50, 300000, 'PROCO4', 'PROSI3','PROBR3')
 INSERT INTO Products VALUES(N'Omega 2022', 'CATE1',50, 300000, 'PROCO4', 'PROSI4','PROBR3')
 --Customers
-INSERT INTO Customers VALUES(N'Lê Văn A', N'Nam', 'TPHCM', '123', 'levana123@gmail.com')
+INSERT INTO Customers VALUES(N'Lê Văn A', N'Nam', 'TPHCM', '0999999991', 'levana123@gmail.com')
 INSERT INTO Customers VALUES(N'Lê Văn B', N'Nữ', 'TPHCM', '0999999992', 'levana123@gmail.com')
 INSERT INTO Customers VALUES(N'Lê Văn C', N'Nam', 'TPHCM', '0999999993', 'levana123@gmail.com')
 INSERT INTO Customers VALUES(N'Lê Văn D', N'Nam', 'TPHCM', '0999999994', 'levana123@gmail.com')
@@ -772,18 +686,16 @@ GO
 --EXEC DELETE_RECEPIT 'ORD2'
 
 --GO
---DECLARE 
-
---@NAME NVARCHAR(50)='AASDASD',
+--DECLARE @NAME NVARCHAR(50)='A',
 --@GENDER NVARCHAR(10)='Nam',
 --@DOB DATETIME='1999-11-2',
 --@PHONE NVARCHAR(20)='093919311',
 --@ADDRESS NVARCHAR(50)='Da Nang',
 --@JOBID NVARCHAR(10)='JOB1',
---@EMAIL NVARCHAR (50)='admin123@gmail.com'
+--@EMAIL NVARCHAR (10)='WORK'
 
---EXEC ADD_EMPLOYEE @NAME, @GENDER, @DOB, @PHONE, @ADDRESS,@EMAIL, @JOBID;
---SELECT* FROM Employees
+--EXEC ADD_EMPLOYEE @NAME, @GENDER, @DOB, @PHONE, @ADDRESS, @JOBID,@EMAIL;
+
 --GO
 --SELECT* FROM Products
 --SELECT * FROM Orders
