@@ -21,7 +21,7 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
 
         public DataTable GetCategory()
         {
-            string query = "GET_CATEGORY";
+            string query = "SP_Show_Category";  //GET_CATEGORY
             return conn.ExecuteReader(query);
         }
     }

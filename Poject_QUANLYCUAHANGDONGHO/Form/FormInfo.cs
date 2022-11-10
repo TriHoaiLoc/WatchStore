@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Project_QUANLYCUAHANGDONGHO
 {
-    public partial class FormAccount : Form
+    public partial class FormInfo : Form
     {
-        public FormAccount()
+        public FormInfo()
         {
             InitializeComponent();
+        }
+
+        private void bt_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

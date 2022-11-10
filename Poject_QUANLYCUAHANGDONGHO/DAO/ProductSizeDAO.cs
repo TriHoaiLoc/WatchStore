@@ -20,7 +20,7 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
 
         public DataTable GetProductSize()
         {
-            string query = "GET_PRODUCTSIZE";
+            string query = "SP_Show_ProductSize";   //GET_PRODUCTSIZE
             return conn.ExecuteReader(query);
         }
     }

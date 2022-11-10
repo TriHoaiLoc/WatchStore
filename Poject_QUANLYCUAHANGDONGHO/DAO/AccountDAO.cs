@@ -22,35 +22,39 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
         //update account
         public void UpdateAccount(Account account)
         {
-            string query = "UPDATE_ACCOUNT";
-            SqlParameter[] parameters = 
+            string query = "SP_Update_Account";
+            SqlParameter[] parameters =
                 {
+                    new SqlParameter("@username", SqlDbType.NVarChar, 50) { Value = account.Username},
                     new SqlParameter("@passwd", SqlDbType.NVarChar, 50) { Value = account.Password},
-                    new SqlParameter("@empID",SqlDbType.NVarChar, 10) {Value = account.EmployeeID}
+                    new SqlParameter("@empID",SqlDbType.NVarChar, 10) {Value = account.EmployeeID},
+                    new SqlParameter("@active", SqlDbType.Bit){Value = account.Active}
                 };
             conn.ExecuteNonQuery(query, parameters);
         }
-        //get account when login
+        //get account
         public Account GetAccount(string username, string passwd)
         {
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(passwd))
             {
                 return null;
             }
-            string query = "GET_ACCOUNT";
+            string query = "SP_Get_Account";
             SqlParameter[] parameters =
             {
                 new SqlParameter("@username", SqlDbType.NVarChar, 50) {Value = username},
-                new SqlParameter("@passwd", SqlDbType.VarChar, 50) {Value = passwd}
+                new SqlParameter("@passwd", SqlDbType.NVarChar, 50) {Value = passwd}
             };
             try
             {
-
                 DataTable data = conn.ExecuteReader(query, parameters);
-                Account account = new Account();
-                account.Username = data.Rows[0][0].ToString();
-                account.Password = data.Rows[0][1].ToString();
-                account.EmployeeID = data.Rows[0][2].ToString();
+                Account account = new Account
+                {
+                    Username = data.Rows[0][0].ToString(),
+                    Password = data.Rows[0][1].ToString(),
+                    EmployeeID = data.Rows[0][2].ToString(),
+                    Active = Convert.ToInt32(data.Rows[0][3].ToString())
+                };
                 return account;
             }
             catch
@@ -58,12 +62,12 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
                 return null;
             }
         }
-
-        public object GetOffice(string empID)
+        
+        //Show list account
+        public DataTable ShowAccount()
         {
-            string query = "GET_OFFICE";
-            SqlParameter[] sqlParameters = {new SqlParameter("@empID", SqlDbType.NVarChar, 10) { Value = empID }};
-            return conn.ExecuteScalar(query, sqlParameters);
+            string query = "SP_Show_Account";
+            return conn.ExecuteReader(query, null);
         }
     }
 }

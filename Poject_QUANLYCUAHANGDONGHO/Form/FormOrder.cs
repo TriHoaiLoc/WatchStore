@@ -13,6 +13,8 @@ namespace Project_QUANLYCUAHANGDONGHO
 {
     public partial class FormOrder : Form
     {
+        private OrderDAO orderDAO = new OrderDAO();
+        private OrderDetailDAO orderDetail = new OrderDetailDAO();
         public FormOrder()
         {
             InitializeComponent();
@@ -21,7 +23,6 @@ namespace Project_QUANLYCUAHANGDONGHO
         }
         public void ShowAllOrder()
         {
-            OrderDAO orderDAO = new OrderDAO();
             dtg_Order.DataSource= orderDAO.showAllOrder();
         }
 
@@ -32,16 +33,12 @@ namespace Project_QUANLYCUAHANGDONGHO
                 DataGridViewRow row = this.dtg_Order.Rows[e.RowIndex];
                 txt_Order.Text = row.Cells["OrderID"].Value.ToString();
             }
-            OrderDetailDAO orderDetail = new OrderDetailDAO();
-           
+
             dtg_OrderDetail.DataSource = orderDetail.showOrderDetail(txt_Order.Text);
         }
 
         private void btn_findOrder_Click(object sender, EventArgs e)
         {
-            OrderDetailDAO orderDetail = new OrderDetailDAO();
-
-
             dtg_OrderDetail.DataSource = orderDetail.showOrderDetail(txt_Order.Text);
         }
     }

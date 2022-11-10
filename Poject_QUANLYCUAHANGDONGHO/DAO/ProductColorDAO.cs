@@ -20,7 +20,7 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
 
         public DataTable GetProductColor()
         {
-            string query = "GET_PRODUCTCOLOR";
+            string query = "SP_Show_ProductColor";  //GET_PRODUCTCOLOR
             return conn.ExecuteReader(query);
         }
     }

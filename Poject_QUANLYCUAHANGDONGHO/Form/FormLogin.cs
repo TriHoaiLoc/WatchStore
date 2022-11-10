@@ -16,6 +16,8 @@ namespace Project_QUANLYCUAHANGDONGHO
     public partial class FormLogin : Form
     {
         public FormMain formMain;
+        private AccountDAO accountDAO = new AccountDAO();
+        private JobDAO jobDAO = new JobDAO();
         public FormLogin()
         {
             InitializeComponent();
@@ -23,20 +25,17 @@ namespace Project_QUANLYCUAHANGDONGHO
 
         private void bt_login_Click(object sender, EventArgs e)
         {
-            AccountDAO accountDAO = new AccountDAO();
-            Account account = new Account();
-            account = accountDAO.GetAccount(tb_username.Text, tb_password.Text);
-
-            if (account != null)
+            formMain.Account = accountDAO.GetAccount(tb_username.Text, tb_password.Text);
+            if (formMain.Account != null)
             {
-                formMain.office = accountDAO.GetOffice(account.EmployeeID).ToString();
-                formMain.Username = account.Username;
-                formMain.empID = account.EmployeeID;
+
+                MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                formMain.Job = jobDAO.GetJob(formMain.Account.EmployeeID);
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu của bạn không chính xác.", "Error");
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu của bạn không chính xác.", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 tb_password.ResetText();
                 tb_password.Focus();
             }
@@ -53,7 +52,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             {
                 e.Cancel = false;
             }
-            else if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            else if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != System.Windows.Forms.DialogResult.OK)
             {
                 e.Cancel = true;
             }
@@ -61,6 +60,7 @@ namespace Project_QUANLYCUAHANGDONGHO
 
         private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
+            formMain.Close();
             Application.Exit();
         }
     }

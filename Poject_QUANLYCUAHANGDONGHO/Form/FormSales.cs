@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project_QUANLYCUAHANGDONGHO
 {
-    public partial class FormAccount : Form
+    public partial class FormSales : Form
     {
-        public FormAccount()
+        public FormSales()
         {
             InitializeComponent();
         }

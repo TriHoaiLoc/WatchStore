@@ -21,7 +21,7 @@ namespace Project_QUANLYCUAHANGDONGHO.Class
         {
         }
 
-        public Employee(string id, string name, string gender, DateTime dob, 
+        public Employee(string id, string name, string gender, DateTime dob,
             string phone, string address, string email, string jobid)
         {
             this.id = id;

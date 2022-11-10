@@ -17,11 +17,24 @@ namespace Project_QUANLYCUAHANGDONGHO
 
     public partial class FormMain : Form
     {
+        public FormMain formMain;
         public FormLogin formLogin;
+        public FormEmployee formEmployee;
+        public FormProduct formProduct;
+        public FormCustomer formCustomer;
+        public FormInfo formInfo;
+        public FormOrder formOrder;
+        public FormAccount formAccount;
+        public FormSales formSales;
 
-        public string empID = null;
-        public string Username = null;
-        public string office = null;
+        private Account account = new Account();
+        private Job job = new Job();
+        private ProductDAO productDAO = new ProductDAO();
+        private OrderDAO orderDAO = new OrderDAO();
+
+        internal Job Job { get => job; set => job = value; }
+        internal Account Account { get => account; set => account = value; }
+
         public FormMain()
         {
             InitializeComponent();
@@ -32,54 +45,44 @@ namespace Project_QUANLYCUAHANGDONGHO
             ProductDAO productDAO = new ProductDAO();
             dataGridView1.DataSource = productDAO.ShowProduct();
         }
+        private void MainNoEnable()
+        {
+
+        }
+        private void MainEnabled()
+        {
+
+        }
         private void FormMain_Load(object sender, EventArgs e)
         {
-            //MainNoEnable();
-            
+            MainNoEnable();
+            Account = new Account();
             formLogin = new FormLogin();
             formLogin.formMain = this;
             formLogin.ShowDialog();  
-            if (office == "Admin")
+            if (Job.JobName == "Admin")
             {
-                //MainEnabled();
+                MainEnabled();
             }
             else
             {
-                //MainNoEnable();
+                MainNoEnable();
             }
-            lb_username.Text = Username;
+            lb_username.Text = Account.Username;
             ShowProduct();
             loadAllComboBox();
-            ShowIDofEmployee();
-        }
-        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormAccount formAccount = new FormAccount();
-            formAccount.ShowDialog();
-        }
-        //restart when logout
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Restart();
-        }
-        private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormCustomer formCustomer = new FormCustomer();
-            formCustomer.ShowDialog();
         }
 
         private void btn_FindCus_Click(object sender, EventArgs e)
         {
-            //0999999991
             CustomerDAO customerDAO = new CustomerDAO();
-            OrderDAO orderDAO = new OrderDAO();
            
-            DataTable reader = customerDAO.findCus(txt_FindCus.Text);
+            DataTable reader = customerDAO.SearchCustomer(txt_FindCus.Text);
             foreach (DataRow row in reader.Rows)
             {
-                txt_CusID.Text = row["CustomerID"].ToString();
-                txt_NameCus.Text = row["CustomerName"].ToString();
-                txt_phone.Text = row["CustomerPhone"].ToString();
+                txt_CusID.Text = row["Mã khách hàng"].ToString();
+                txt_NameCus.Text = row["Tên khách hàng"].ToString();
+                txt_phone.Text = row["Số điện thoại"].ToString();
             }
 
             orderDAO.createOrder(txt_CusID.Text, txt_empId.Text);
@@ -87,19 +90,12 @@ namespace Project_QUANLYCUAHANGDONGHO
             txt_OrderID.Text=reader2.ToString();
         }
 
-        public void ShowIDofEmployee()
-        {
-            EmployeeDAO employee = new EmployeeDAO();
-            object reader = employee.FindEmployeeID(lb_username.Text);
-            txt_empId.Text= reader.ToString();
-        }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                txt_IDproductDetail.Text = row.Cells["ProductID"].Value.ToString();
+                txt_IDproductDetail.Text = row.Cells["Mã sản phẩm"].Value.ToString();
             }
         }
             
@@ -118,8 +114,6 @@ namespace Project_QUANLYCUAHANGDONGHO
         {
             if (MessageBox.Show("Bạn có thật sự muốn thanh toán?", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
-                OrderDAO orderDAO = new OrderDAO();
-
                 orderDAO.ThanhToan(txt_OrderID.Text);
                 resetForm();
             }
@@ -134,40 +128,16 @@ namespace Project_QUANLYCUAHANGDONGHO
             txt_IDproductDetail.Text = "";
             txt_OrderID.Text = "";
             lb_TotalOrder.Text = "0";
-            lb_username.Text = Username;
-        }
-
-        private void danhSáchHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormOrder formOrder = new FormOrder();
-
-
-            this.Hide();
-
-            formOrder.ShowDialog();
-            this.Show();
+            lb_username.Text = Account.Username;
         }
 
         private void bt_cancel_Click(object sender, EventArgs e)
         {
-            OrderDAO order = new OrderDAO();
-            order.cancelOrder(txt_OrderID.Text);
-            FormMain formMain = new FormMain();
+            orderDAO.cancelOrder(txt_OrderID.Text);
+            formMain = new FormMain();
             this.Close();
-
             formMain.ShowDialog();
             this.Show();
-        }
-
-        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormEmployee formEmployee = new FormEmployee();
-            formEmployee.ShowDialog();
-        }
-        private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormProduct formProduct = new FormProduct();
-            formProduct.ShowDialog();
         }
 
         public void loadAllComboBox()
@@ -182,15 +152,58 @@ namespace Project_QUANLYCUAHANGDONGHO
 
         private void cb_search_SelectedValueChanged(object sender, EventArgs e)
         {
-            ProductDAO productDAO = new ProductDAO();
             dataGridView1.DataSource = productDAO.SearchProductName(cb_search.Text, tb_search.Text);
         }
 
         private void tb_search_TextChanged(object sender, EventArgs e)
         {
-            ProductDAO productDAO = new ProductDAO();
             dataGridView1.DataSource = productDAO.SearchProductName(cb_search.Text, tb_search.Text);
         }
 
+        private void doanhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formSales = new FormSales();
+            formSales.ShowDialog();
+        }
+
+        private void nhanVienToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            formEmployee = new FormEmployee();
+            formEmployee.ShowDialog();
+        }
+
+        private void taiKhoanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formAccount = new FormAccount();
+            formAccount.ShowDialog();
+        }
+        private void sanPhamToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            formProduct = new FormProduct();
+            formProduct.ShowDialog();
+        }
+
+        private void khachHangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formCustomer = new FormCustomer();
+            formCustomer.ShowDialog();
+        }
+
+        private void thongTinCaNhanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formInfo = new FormInfo();
+            formInfo.ShowDialog();
+        }
+        //restart when logout
+        private void đangXuatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void danhSachHoaĐonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formOrder = new FormOrder();
+            formOrder.ShowDialog();
+        }
     }
 }

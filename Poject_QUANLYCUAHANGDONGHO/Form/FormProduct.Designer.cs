@@ -321,7 +321,6 @@
             this.cb_size.Name = "cb_size";
             this.cb_size.Size = new System.Drawing.Size(334, 37);
             this.cb_size.TabIndex = 9;
-            this.cb_size.SelectedIndexChanged += new System.EventHandler(this.cb_size_SelectedIndexChanged);
             // 
             // cb_color
             // 
@@ -371,7 +370,6 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "FormProduct";
             this.Text = "FormProduct";
-            this.Load += new System.EventHandler(this.FormProduct_Load);
             this.tabControl1.ResumeLayout(false);
             this.listTab.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

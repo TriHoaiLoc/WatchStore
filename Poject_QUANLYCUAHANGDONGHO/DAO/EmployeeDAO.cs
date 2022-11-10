@@ -18,75 +18,97 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
         {
             conn = new DBConnection();
         }
+
+        public void AddEmployee(Employee emp)
+        {
+            string query = "SP_Add_Employee"; //ADD_EMPLOYEE
+            SqlParameter[] parameters =
+                {
+                new SqlParameter("@NAME", SqlDbType.NVarChar, 50) { Value = emp.Name},
+                new SqlParameter("@GENDER", SqlDbType.NVarChar, 10) { Value = emp.Gender},
+                new SqlParameter("@DOB", SqlDbType.DateTime) { Value = emp.Dob},
+                new SqlParameter("@PHONE", SqlDbType.NVarChar, 20) { Value = emp.Phone},
+                new SqlParameter("@ADDRESS", SqlDbType.NVarChar, 50) { Value = emp.Address},
+                new SqlParameter("@EMAIL", SqlDbType.NVarChar, 50) { Value = emp.Email},
+                new SqlParameter("@JOBID", SqlDbType.NVarChar, 10) { Value = emp.Jobid}
+                };
+            conn.ExecuteNonQuery(query, parameters);
+        }
+        public void EditEmployee(Employee emp)
+        {
+            string query = "SP_Update_Employee"; //UPDATE_EMPLOYEE
+
+            SqlParameter[] parameters =
+                {
+                new SqlParameter("@EMPID", SqlDbType.NVarChar, 10) { Value = emp.Id},
+                new SqlParameter("@NAME", SqlDbType.NVarChar, 50) { Value = emp.Name},
+                new SqlParameter("@GENDER", SqlDbType.NVarChar, 10) { Value = emp.Gender},
+                new SqlParameter("@DOB", SqlDbType.DateTime) { Value = emp.Dob},
+                new SqlParameter("@PHONE", SqlDbType.NVarChar, 20) { Value = emp.Phone},
+                new SqlParameter("@ADDRESS", SqlDbType.NVarChar, 50) { Value = emp.Address},
+                new SqlParameter("@EMAIL", SqlDbType.NVarChar, 50) { Value = emp.Email},
+                new SqlParameter("@JOBID", SqlDbType.NVarChar, 10) { Value = emp.Jobid}
+                };
+            conn.ExecuteNonQuery(query, parameters);
+        }
+        public void DelEmployee(string id)
+        {
+            string query = "SP_Delete_Employee"; //DELETE_EMPLOYEE
+            SqlParameter[] parameters =
+                {
+                new SqlParameter("@ID", SqlDbType.NVarChar, 10) { Value = id},
+                };
+            conn.ExecuteNonQuery(query, parameters);
+        }
         public DataTable ShowEmployee()
         {
-            string query = "SHOW_EMPLOYEE";
+            string query = "SP_Show_Employee"; //SHOW_EMPLOYEE
             return conn.ExecuteReader(query);
         }
 
-        public DataTable FindEmployee(string name)
+        public DataTable SearchEmployee(string phone)
         {
-            string query = "FIND_EMPLOYEE";
+            string query = "SP_Search_Employee"; //FIND_EMPLOYEE
             SqlParameter[] parameters =
             {
-                new SqlParameter("@NAME", SqlDbType.NVarChar, 50) { Value = name}
+                new SqlParameter("@phone", SqlDbType.NVarChar, 50) { Value = phone}
         };
             return conn.ExecuteReader(query, parameters);
         }
-        public object FindEmployeeID(string name)
+        public Employee GetEmployeeID(string id)
         {
-            string query = "FIND_EMPLOYEE_ID";
+            string query = "SP_Get_Employee"; //FIND_EMPLOYEE_ID
             SqlParameter[] parameters =
             {
-                new SqlParameter("@NAME", SqlDbType.NVarChar, 50) { Value = name}
-        };
-            return conn.ExecuteScalar(query, parameters);
+                new SqlParameter("@id", SqlDbType.NVarChar, 10) { Value = id}
+            };
+            try
+            {
+                DataTable data = conn.ExecuteReader(query, parameters);
+                Employee employee = new Employee
+                {
+                    Id = data.Rows[0][1].ToString(),
+                    Name = data.Rows[0][2].ToString(),
+                    Gender = data.Rows[0][3].ToString(),
+                    Dob = Convert.ToDateTime(data.Rows[0][4].ToString()),
+                    Phone = data.Rows[0][5].ToString(),
+                    Address = data.Rows[0][6].ToString(),
+                    Email = data.Rows[0][7].ToString(),
+                    Jobid = data.Rows[0][8].ToString(),
+                };
+                return employee;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public DataTable GetPersonalInfo(string id)
+        {
+            string query = "SP_Get_PersonalInfo";
+            return conn.ExecuteReader(query);
         }
 
 
-        public void AddEmployee(string txtboxnameempl, string comboxgenderempl, string txtboxdobempl, string txtboxphoneempl, string txtboxaddrempl, string txtboxemailempl, string txtboxjobid)
-        {
-            string query = "ADD_EMPLOYEE";
-            SqlParameter[] parameters =
-                {
-                new SqlParameter("@NAME", SqlDbType.NVarChar, 50) { Value = txtboxnameempl},
-                new SqlParameter("@GENDER", SqlDbType.NVarChar, 10) { Value = comboxgenderempl},
-                new SqlParameter("@DOB", SqlDbType.DateTime) { Value = txtboxdobempl},
-                new SqlParameter("@PHONE", SqlDbType.NVarChar, 20) { Value = txtboxphoneempl},
-                new SqlParameter("@ADDRESS", SqlDbType.NVarChar, 50) { Value = txtboxaddrempl},
-                new SqlParameter("@EMAIL", SqlDbType.NVarChar, 50) { Value = txtboxemailempl},
-                new SqlParameter("@JOBID", SqlDbType.NVarChar, 10) { Value = txtboxjobid}
-                };
-            //cmd.Parameters.Add(new SqlParameter("@Name", TextBox1));
-            conn.ExecuteNonQuery(query, parameters);
-        }
-        public void EditEmployee(string id, string name, string gender, string dob, string phone, string addr, string email, string jobid)
-        {
-            string query = "UPDATE_EMPLOYEE";
-            
-            SqlParameter[] parameters =
-                {
-                new SqlParameter("@EMPID", SqlDbType.NVarChar, 10) { Value = id},
-                new SqlParameter("@NAME", SqlDbType.NVarChar, 50) { Value = name},
-                new SqlParameter("@GENDER", SqlDbType.NVarChar, 10) { Value = gender},
-                new SqlParameter("@DOB", SqlDbType.DateTime) { Value = dob},
-                new SqlParameter("@PHONE", SqlDbType.NVarChar, 20) { Value = phone},
-                new SqlParameter("@ADDRESS", SqlDbType.NVarChar, 50) { Value = addr},
-                new SqlParameter("@EMAIL", SqlDbType.NVarChar, 50) { Value = email},
-                new SqlParameter("@JOBID", SqlDbType.NVarChar, 10) { Value = jobid}
-                };
-            //cmd.Parameters.Add(new SqlParameter("@Name", TextBox1));
-            conn.ExecuteNonQuery(query, parameters);
-        }
-        public void DelEmployee(string txtcusid)
-        {
-            string query = "DELETE_EMPLOYEE";
-            SqlParameter[] parameters =
-                {
-                new SqlParameter("@ID", SqlDbType.NVarChar, 10) { Value = txtcusid},
-                };
-            //cmd.Parameters.Add(new SqlParameter("@Name", TextBox1));
-            conn.ExecuteNonQuery(query, parameters);
-        }
     }
 }

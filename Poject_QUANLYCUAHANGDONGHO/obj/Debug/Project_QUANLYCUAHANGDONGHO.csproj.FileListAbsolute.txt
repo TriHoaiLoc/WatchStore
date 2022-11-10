@@ -30,7 +30,6 @@ C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\o
 C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.exe
 C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.pdb
 C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormLogin.resources
-C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormAccount.resources
 F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormAccount.resources
 F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormAdmin.resources
 F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormCustomer.resources
@@ -89,8 +88,9 @@ D:\gifPro\WatchStore\Poject_QUANLYCUAHANGDONGHO\bin\Debug\Project_QUANLYCUAHANGD
 D:\gifPro\WatchStore\Poject_QUANLYCUAHANGDONGHO\bin\Debug\Project_QUANLYCUAHANGDONGHO.pdb
 D:\gifPro\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormEmployee.resources
 C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormEmployee.resources
-C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormAdmin.resources
 C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormCustomer.resources
 C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormOrder.resources
 C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormProduct.resources
 F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormEmployee.resources
+C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormInfo.resources
+C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormSales.resources

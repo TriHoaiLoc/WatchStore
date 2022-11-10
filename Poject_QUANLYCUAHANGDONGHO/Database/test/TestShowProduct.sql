@@ -1,0 +1,40 @@
+﻿Use WatchStore
+GO
+
+--ADD DATA ProductColor
+INSERT INTO ProductColor VALUES(N'Đen')
+INSERT INTO ProductColor VALUES(N'Trắng')
+INSERT INTO ProductColor VALUES(N'Bạc')
+INSERT INTO ProductColor VALUES(N'Vàng')
+
+--ADD DATA ProductSize
+INSERT INTO ProductSize VALUES(N'14cm')
+INSERT INTO ProductSize VALUES(N'15cm')
+INSERT INTO ProductSize VALUES(N'16cm')
+INSERT INTO ProductSize VALUES(N'17cm')
+INSERT INTO ProductSize VALUES(N'18cm')
+INSERT INTO ProductSize VALUES(N'19cm')
+
+
+--ADD DATA ProductBrand
+INSERT INTO ProductBrand VALUES(N'Rolex')
+INSERT INTO ProductBrand VALUES(N'Gucci')
+INSERT INTO ProductBrand VALUES(N'Omega')
+
+--ADD DATA Categories 
+INSERT INTO Categories VALUES(N'Đồng hồ Nam')
+INSERT INTO Categories VALUES(N'Đồng hồ Nữ')
+
+--ADD DATA Products
+INSERT INTO Products VALUES(N'Rolex 2022', 'CATE1',10, 1000000, 'PROCO1', 'PROSI1','PROBR1')
+INSERT INTO Products VALUES(N'Rolex 2022', 'CATE1',10, 1000000, 'PROCO1', 'PROSI2','PROBR1')
+INSERT INTO Products VALUES(N'Rolex 2022', 'CATE1',10, 1000000, 'PROCO1', 'PROSI3','PROBR1')
+INSERT INTO Products VALUES(N'Rolex 2022', 'CATE1',10, 1000000, 'PROCO1', 'PROSI4','PROBR1')
+GO
+
+
+CREATE PROC SHOW_PRODUCT
+as
+	SELECT * FROM dbo.Products;
+GO
+

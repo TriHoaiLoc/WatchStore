@@ -1,5 +1,4 @@
-﻿using Project_QUANLYCUAHANGDONGHO.DAO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,20 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using Project_QUANLYCUAHANGDONGHO.DAO;
+using Project_QUANLYCUAHANGDONGHO.Class;
 
 namespace Project_QUANLYCUAHANGDONGHO
 {
     public partial class FormCustomer : Form
     {
+        private CustomerDAO customerDAO = new CustomerDAO();
+        private Customer customer;
         public FormCustomer()
         {
             InitializeComponent();
-            ShowCustomer();
             
         }
         private void ShowCustomer()
         {
-            CustomerDAO customerDAO = new CustomerDAO();
             dataGridView2.DataSource = customerDAO.ShowCustomer();
         }
 
@@ -41,35 +42,43 @@ namespace Project_QUANLYCUAHANGDONGHO
 
         private void FormCustomer_Load(object sender, EventArgs e)
         {
-
+            ShowCustomer();
         }
         
         private void butaddcus_Click(object sender, EventArgs e)
         {
-            CustomerDAO customerDAO = new CustomerDAO();
-            customerDAO.AddCustomer(txtnamecus.Text,comboxgendercus.Text, txtaddrcus.Text, txtphonecus.Text, txtemailcus.Text);
+            customer = new Customer();
+            customer.Name = txtnamecus.Text;
+            customer.Gender = comboxgendercus.Text;
+            customer.Address = txtaddrcus.Text;
+            customer.Phone = txtphonecus.Text;
+            customer.Email = txtemailcus.Text;
+            customerDAO.AddCustomer(customer);
             ShowCustomer();
         }
 
         private void buteditcus_Click(object sender, EventArgs e)
         {
-            CustomerDAO customerDAO = new CustomerDAO();
-            customerDAO.EditCustomer(txtcusid.Text,txtnamecus.Text, comboxgendercus.Text, txtaddrcus.Text, txtphonecus.Text, txtemailcus.Text);
+            customer = new Customer();
+            customer.Id = txtcusid.Text;
+            customer.Name = txtnamecus.Text;
+            customer.Gender = comboxgendercus.Text;
+            customer.Address = txtaddrcus.Text;
+            customer.Phone = txtphonecus.Text;
+            customer.Email = txtemailcus.Text;
+            customerDAO.EditCustomer(customer);
             ShowCustomer();
         }
 
         private void butdelcus_Click(object sender, EventArgs e)
         {
-            CustomerDAO customerDAO = new CustomerDAO();
             customerDAO.DelCustomer(txtcusid.Text);
             ShowCustomer();
         }
 
         private void butsearchcus_Click(object sender, EventArgs e)
         {
-            CustomerDAO customerDAO = new CustomerDAO();
-           
-            dataGridView2.DataSource = customerDAO.findCus(textBox1.Text);
+            dataGridView2.DataSource = customerDAO.SearchCustomer(textBox1.Text);
            
           
         }

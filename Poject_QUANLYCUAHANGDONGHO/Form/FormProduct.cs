@@ -17,11 +17,11 @@ namespace Project_QUANLYCUAHANGDONGHO
     public partial class FormProduct : Form
     {
         DataGridViewRow r = new DataGridViewRow();
-
         DataTable dt_Category = new DataTable();
         DataTable dt_Color = new DataTable();
         DataTable dt_Size = new DataTable();
         DataTable dt_Brand = new DataTable();
+        private ProductDAO productDao = new ProductDAO();
 
         string selectedID = "";
 
@@ -53,7 +53,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             CategoryDAO categoryDAO = new CategoryDAO();
             dt_Category = categoryDAO.GetCategory();
             cb_category.DataSource = dt_Category;
-            cb_category.ValueMember = "CategoryName";
+            cb_category.ValueMember = "Tên loại";
         }
 
         public void ComboColorLoad()
@@ -62,7 +62,7 @@ namespace Project_QUANLYCUAHANGDONGHO
 
             dt_Color = productColorDAO.GetProductColor();
             cb_color.DataSource = dt_Color;
-            cb_color.ValueMember = "ProductColorName";
+            cb_color.ValueMember = "Tên màu";
         }
 
         public void ComboSizeLoad()
@@ -70,7 +70,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             ProductSizeDAO productSizeDAO = new ProductSizeDAO();
             dt_Size = productSizeDAO.GetProductSize();
             cb_size.DataSource = dt_Size;
-            cb_size.ValueMember = "ProductSizeName";
+            cb_size.ValueMember = "Tên kích cỡ";
         }
 
         public void ComboBrandLoad()
@@ -78,23 +78,12 @@ namespace Project_QUANLYCUAHANGDONGHO
             ProductBrandDAO productBrandDAO = new ProductBrandDAO();
             dt_Brand = productBrandDAO.GetProductBrand();
             cb_brand.DataSource = dt_Brand;
-            cb_brand.ValueMember = "ProductBrandName";
-        }
-
-        private void FormProduct_Load(object sender, EventArgs e)
-        {
-
+            cb_brand.ValueMember = "Tên hãng";
         }
 
         private void ShowProduct1()
         {
-            ProductDAO productDAO = new ProductDAO();
-            dataGridView1.DataSource = productDAO.ShowProduct();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            dataGridView1.DataSource = productDao.ShowProduct();
         }
 
         private void bt_addProduct_Click(object sender, EventArgs e)
@@ -163,25 +152,18 @@ namespace Project_QUANLYCUAHANGDONGHO
             cb_brand.Text = "";
         }
 
-        private void cb_size_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void bt_edit_Click(object sender, EventArgs e)
         {
-            ProductDAO productDAO = new ProductDAO();
-
-            string category = "";
-            string color = "";
-            string size = "";
-            string brand = "";
+            Product product = new Product();
+            product.Name = tb_name.Text;
+            product.Quantity = int.Parse(tb_quantity.Text);
+            product.Price = int.Parse(tb_price.Text);
 
             for (int i = 0; i < dt_Category.Rows.Count; i++)
             {
                 if (dt_Category.Rows[i][2].ToString() == cb_category.Text)
                 {
-                    category = dt_Category.Rows[i][1].ToString();
+                    product.Categoryid = dt_Category.Rows[i][1].ToString();
                     break;
                 }
             }
@@ -190,7 +172,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             {
                 if (dt_Color.Rows[i][2].ToString() == cb_color.Text)
                 {
-                    color = dt_Color.Rows[i][1].ToString();
+                    product.Colorid = dt_Color.Rows[i][1].ToString();
                     break;
                 }
             }
@@ -199,7 +181,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             {
                 if (dt_Size.Rows[i][2].ToString() == cb_size.Text)
                 {
-                    size = dt_Size.Rows[i][1].ToString();
+                    product.Sizeid = dt_Size.Rows[i][1].ToString();
                     break;
                 }
             }
@@ -208,31 +190,19 @@ namespace Project_QUANLYCUAHANGDONGHO
             {
                 if (dt_Brand.Rows[i][2].ToString() == cb_brand.Text)
                 {
-                    brand = dt_Brand.Rows[i][1].ToString();
+                    product.Brandid = dt_Brand.Rows[i][1].ToString();
                     break;
                 }
             }
 
             if (bt_edit.Text == "Thêm")
             {
-                productDAO.AddProduct(
-                    tb_name.Text, 
-                    category, 
-                    int.Parse(tb_quantity.Text),
-                    int.Parse(tb_price.Text),
-                    color,
-                    size,
-                    brand);
+                productDao.AddProduct(product);
             }
             else if (bt_edit.Text == "Sửa")
             {
-                productDAO.UpdateProduct(selectedID, tb_name.Text,
-                    category,
-                    int.Parse(tb_quantity.Text),
-                    int.Parse(tb_price.Text),
-                    color,
-                    size,
-                    brand);
+                product.Id = selectedID;
+                productDao.UpdateProduct(product);
             }
             tabControl1.TabPages.Remove(editTab);
             tabControl1.TabPages.Add(listTab);
@@ -241,21 +211,18 @@ namespace Project_QUANLYCUAHANGDONGHO
 
         private void bt_deleteProduct_Click(object sender, EventArgs e)
         {
-            ProductDAO productDAO = new ProductDAO();
-            productDAO.DeleteProduct(r.Cells[0].Value.ToString());
+            productDao.DeleteProduct(r.Cells[0].Value.ToString());
             ShowProduct1();
         }
 
         private void tb_search_TextChanged(object sender, EventArgs e)
         {
-            ProductDAO productDAO = new ProductDAO();
-            dataGridView1.DataSource = productDAO.SearchProductName(cb_search.Text, tb_search.Text);
+            dataGridView1.DataSource = productDao.SearchProductName(cb_search.Text, tb_search.Text);
         }
 
         private void cb_search_SelectedValueChanged(object sender, EventArgs e)
         {
-            ProductDAO productDAO = new ProductDAO();
-            dataGridView1.DataSource = productDAO.SearchProductName(cb_search.Text, tb_search.Text);
+            dataGridView1.DataSource = productDao.SearchProductName(cb_search.Text, tb_search.Text);
         }
     }
 }

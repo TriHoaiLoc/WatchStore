@@ -77,6 +77,18 @@
     <Compile Include="Class\ProductColor.cs" />
     <Compile Include="Class\ProductSize.cs" />
     <Compile Include="DAO\ProductDAO.cs" />
+    <Compile Include="Form\FormAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormAccount.Designer.cs">
+      <DependentUpon>FormAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormSales.Designer.cs">
+      <DependentUpon>FormSales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\FormEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,17 +101,11 @@
     <Compile Include="Form\FormProduct.Designer.cs">
       <DependentUpon>FormProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FormAccount.cs">
+    <Compile Include="Form\FormInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FormAccount.Designer.cs">
-      <DependentUpon>FormAccount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\FormAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FormAdmin.Designer.cs">
-      <DependentUpon>FormAdmin.cs</DependentUpon>
+    <Compile Include="Form\FormInfo.Designer.cs">
+      <DependentUpon>FormInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\FormCustomer.cs">
       <SubType>Form</SubType>
@@ -141,11 +147,8 @@
     <EmbeddedResource Include="Form\FormEmployee.resx">
       <DependentUpon>FormEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FormAccount.resx">
-      <DependentUpon>FormAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\FormAdmin.resx">
-      <DependentUpon>FormAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="Form\FormInfo.resx">
+      <DependentUpon>FormInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FormCustomer.resx">
       <DependentUpon>FormCustomer.cs</DependentUpon>
@@ -161,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FormProduct.resx">
       <DependentUpon>FormProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormSales.resx">
+      <DependentUpon>FormSales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

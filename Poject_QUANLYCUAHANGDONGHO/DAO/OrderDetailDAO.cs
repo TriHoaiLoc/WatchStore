@@ -19,7 +19,7 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
         }
         public void addOrderDetail(string orderID,string productID,int quanity)
         {
-            string query = "ADD_OrderDetails";
+            string query = "SP_Add_OrderDetails"; //ADD_OrderDetails
             SqlParameter[] parameters =
               {
             new SqlParameter("@ORDER_ID", SqlDbType.NVarChar, 10) { Value = orderID },
@@ -30,7 +30,7 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
         }
         public DataTable showOrderDetail(string orderID)
         {
-            string query = "SHOW_OrderDetails";
+            string query = "SP_Show_OrderDetails"; //SHOW_OrderDetails
             SqlParameter[] parameters =
              {
             new SqlParameter("@ORDERID", SqlDbType.NVarChar, 10) { Value = orderID } };
@@ -38,7 +38,7 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
         }
         public object countToalTemp(string orderID)
         {
-            string query = "THANHTOAN_TAMTHOI";
+            string query = "SP_Pay_Wait"; //THANHTOAN_TAMTHOI
             SqlParameter[] parameters =
              {
             new SqlParameter("@ORDERID", SqlDbType.NVarChar, 10) { Value = orderID } };

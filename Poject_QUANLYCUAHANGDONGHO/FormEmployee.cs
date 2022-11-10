@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_QUANLYCUAHANGDONGHO.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,18 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Project_QUANLYCUAHANGDONGHO.DAO;
-using Project_QUANLYCUAHANGDONGHO.Class;
 
 namespace Project_QUANLYCUAHANGDONGHO
 {
     public partial class FormEmployee : Form
     {
-        private EmployeeDAO employeeDAO = new EmployeeDAO();
-        private Employee employee = new Employee();
         public FormEmployee()
         {
             InitializeComponent();
+            ShowEmployee();
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
@@ -28,20 +26,19 @@ namespace Project_QUANLYCUAHANGDONGHO
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*employee.Name = txtboxnameempl.Text;
-            employee.Gender = comboxgenderempl.Text;
-            employee.Dob = null; //txtboxdobempl.Text; chú ý*/
-            employeeDAO.AddEmployee(employee);
+            EmployeeDAO employeeDAO = new EmployeeDAO();
+            employeeDAO.AddEmployee(txtboxnameempl.Text, comboxgenderempl.Text, txtboxdobempl.Text, txtboxphoneempl.Text,txtboxaddrempl.Text, txtemplid.Text,txtboxjobid.Text);
             ShowEmployee();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ShowEmployee();
+
         }
 
         private void ShowEmployee()
         {
+            EmployeeDAO employeeDAO = new EmployeeDAO();
             dataGridView3.DataSource = employeeDAO.ShowEmployee();
         }
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -65,20 +62,16 @@ namespace Project_QUANLYCUAHANGDONGHO
 
         private void button2_Click(object sender, EventArgs e)
         {
-            employeeDAO.EditEmployee(employee);
+            EmployeeDAO employeeDAO = new EmployeeDAO();
+            employeeDAO.EditEmployee(txtemplid.Text, txtboxnameempl.Text, comboxgenderempl.Text, txtboxdobempl.Text, txtboxphoneempl.Text, txtboxaddrempl.Text, txtemplid.Text, txtboxjobid.Text);
             ShowEmployee();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            EmployeeDAO employeeDAO = new EmployeeDAO();
             employeeDAO.DelEmployee(txtemplid.Text);
             ShowEmployee();
-        }
-
-        private void butsearchempl_Click(object sender, EventArgs e)
-        {
-            EmployeeDAO employeeDAO = new EmployeeDAO();
-            dataGridView3.DataSource = employeeDAO.SearchEmployee(txtboxempl.Text);
         }
     }
    

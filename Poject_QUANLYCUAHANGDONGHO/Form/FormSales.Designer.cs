@@ -1,7 +1,7 @@
 ﻿
 namespace Project_QUANLYCUAHANGDONGHO
 {
-    partial class FormAccount
+    partial class FormSales
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,17 @@ namespace Project_QUANLYCUAHANGDONGHO
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FormSales
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormAccount";
+            this.Name = "FormSales";
+            this.Text = "Doanh thu";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -20,7 +20,7 @@ namespace Project_QUANLYCUAHANGDONGHO.Class
 
         public DataTable GetProductBrand()
         {
-            string query = "GET_PRODUCTBRAND";
+            string query = "SP_Show_ProductBrand";  //GET_PRODUCTBRAND
             return conn.ExecuteReader(query);
         }
     }

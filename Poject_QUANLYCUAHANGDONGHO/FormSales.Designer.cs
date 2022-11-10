@@ -1,7 +1,7 @@
 ﻿
 namespace Project_QUANLYCUAHANGDONGHO
 {
-    partial class FormAccount
+    partial class FormSales
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormAccount";
+            this.Text = "FormSales";
         }
 
         #endregion
