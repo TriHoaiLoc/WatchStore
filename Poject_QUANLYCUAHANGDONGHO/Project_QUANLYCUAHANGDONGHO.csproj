@@ -144,6 +144,9 @@
     </Compile>
     <Compile Include="main\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form\FormAccount.resx">
+      <DependentUpon>FormAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\FormEmployee.resx">
       <DependentUpon>FormEmployee.cs</DependentUpon>
     </EmbeddedResource>

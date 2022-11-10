@@ -27,13 +27,15 @@ namespace Project_QUANLYCUAHANGDONGHO
         public FormAccount formAccount;
         public FormSales formSales;
 
-        private Account account = new Account();
-        private Job job = new Job();
+        private Account accountMain;
+        private Job jobMain;
+        private Employee employeeMain;
         private ProductDAO productDAO = new ProductDAO();
         private OrderDAO orderDAO = new OrderDAO();
 
-        internal Job Job { get => job; set => job = value; }
-        internal Account Account { get => account; set => account = value; }
+        internal Job JobMain { get => jobMain; set => jobMain = value; }
+        internal Account AccountMain { get => accountMain; set => accountMain = value; }
+        internal Employee EmployeeMain { get => employeeMain; set => employeeMain = value; }
 
         public FormMain()
         {
@@ -47,20 +49,20 @@ namespace Project_QUANLYCUAHANGDONGHO
         }
         private void MainNoEnable()
         {
-
+            adminToolStripMenuItem.Enabled = false;
         }
         private void MainEnabled()
         {
-
+            adminToolStripMenuItem.Enabled = true;
         }
         private void FormMain_Load(object sender, EventArgs e)
         {
             MainNoEnable();
-            Account = new Account();
             formLogin = new FormLogin();
             formLogin.formMain = this;
-            formLogin.ShowDialog();  
-            if (Job.JobName == "Admin")
+            formLogin.ShowDialog();
+            MessageBox.Show(JobMain.JobName);
+            if (JobMain.JobName == "Admin")
             {
                 MainEnabled();
             }
@@ -68,7 +70,8 @@ namespace Project_QUANLYCUAHANGDONGHO
             {
                 MainNoEnable();
             }
-            lb_username.Text = Account.Username;
+            if(AccountMain != null) 
+                txt_empId.Text = employeeMain.Name;
             ShowProduct();
             loadAllComboBox();
         }
@@ -85,20 +88,24 @@ namespace Project_QUANLYCUAHANGDONGHO
                 txt_phone.Text = row["Số điện thoại"].ToString();
             }
 
-            orderDAO.createOrder(txt_CusID.Text, txt_empId.Text);
+            orderDAO.createOrder(txt_CusID.Text, employeeMain.Id);
             object reader2 = orderDAO.showLastOrder();
             txt_OrderID.Text=reader2.ToString();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           if (e.RowIndex >= 0)
+          
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                 txt_IDproductDetail.Text = row.Cells["Mã sản phẩm"].Value.ToString();
             }
         }
-            
+
         private void btn_addOrderDetail_Click(object sender, EventArgs e)
         {
             OrderDetailDAO orderDetailDAO = new OrderDetailDAO();
@@ -128,7 +135,6 @@ namespace Project_QUANLYCUAHANGDONGHO
             txt_IDproductDetail.Text = "";
             txt_OrderID.Text = "";
             lb_TotalOrder.Text = "0";
-            lb_username.Text = Account.Username;
         }
 
         private void bt_cancel_Click(object sender, EventArgs e)
@@ -205,5 +211,6 @@ namespace Project_QUANLYCUAHANGDONGHO
             formOrder = new FormOrder();
             formOrder.ShowDialog();
         }
+
     }
 }

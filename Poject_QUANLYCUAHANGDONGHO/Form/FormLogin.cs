@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Project_QUANLYCUAHANGDONGHO.Class;
 using Project_QUANLYCUAHANGDONGHO.DAO;
+using Project_QUANLYCUAHANGDONGHO.Modify;
 
 namespace Project_QUANLYCUAHANGDONGHO
 {
@@ -18,6 +19,7 @@ namespace Project_QUANLYCUAHANGDONGHO
         public FormMain formMain;
         private AccountDAO accountDAO = new AccountDAO();
         private JobDAO jobDAO = new JobDAO();
+        private EmployeeDAO employeeDAO = new EmployeeDAO();
         public FormLogin()
         {
             InitializeComponent();
@@ -25,17 +27,19 @@ namespace Project_QUANLYCUAHANGDONGHO
 
         private void bt_login_Click(object sender, EventArgs e)
         {
-            formMain.Account = accountDAO.GetAccount(tb_username.Text, tb_password.Text);
-            if (formMain.Account != null)
+            formMain.AccountMain = accountDAO.GetAccount(tb_username.Text, tb_password.Text);
+            if (formMain.AccountMain != null)
             {
-
-                MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                formMain.Job = jobDAO.GetJob(formMain.Account.EmployeeID);
-                this.Hide();
+                MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DBConnection conn = new DBConnection();
+                conn.ConString = @"Data Source=.;Initial Catalog=WatchStore;User ID=" + formMain.AccountMain.Username + ";Password=" + formMain.AccountMain.Password;
+                formMain.JobMain = jobDAO.GetJob(formMain.AccountMain.EmployeeID);
+                formMain.EmployeeMain = employeeDAO.GetEmployeeID(formMain.AccountMain.EmployeeID);
+                this.Visible = false;
             }
             else
             {
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu của bạn không chính xác.", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu của bạn không chính xác.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tb_password.ResetText();
                 tb_password.Focus();
             }
@@ -46,22 +50,16 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.Close();
         }
 
-        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (bt_login.Enabled)
-            {
-                e.Cancel = false;
-            }
-            else if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != System.Windows.Forms.DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
-        }
-
         private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
             formMain.Close();
             Application.Exit();
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            formMain.JobMain = new Job { JobID = "", JobName = "Guest", Salary = 0 };
+            formMain.AccountMain = new Account { Username = "", Password = "", EmployeeID = "", Active = 1 };
         }
     }
 }

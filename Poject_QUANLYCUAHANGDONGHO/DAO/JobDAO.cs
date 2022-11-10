@@ -27,7 +27,7 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
             string query = "SP_Get_Job";
             SqlParameter[] parameters =
             {
-                new SqlParameter("@id", SqlDbType.NVarChar, 10) {Value = id}
+                new SqlParameter("@empid", SqlDbType.NVarChar, 10) {Value = id}
             };
             try
             {
@@ -36,7 +36,7 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
                 {
                     JobID = data.Rows[0][1].ToString(),
                     JobName = data.Rows[0][2].ToString(),
-                    Salary = Convert.ToInt32(data.Rows[0][3].ToString())
+                    Salary = Convert.ToInt32(data.Rows[0][3])
                 };
                 return job;
             }

@@ -46,6 +46,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             ComboColorLoad();
             ComboSizeLoad();
             ComboBrandLoad();
+            dataGridView2.DataSource = dt_Category;
         }
 
         public void ComboCategoryLoad()
@@ -158,39 +159,38 @@ namespace Project_QUANLYCUAHANGDONGHO
             product.Name = tb_name.Text;
             product.Quantity = int.Parse(tb_quantity.Text);
             product.Price = int.Parse(tb_price.Text);
-
             for (int i = 0; i < dt_Category.Rows.Count; i++)
             {
-                if (dt_Category.Rows[i][2].ToString() == cb_category.Text)
+                if (dt_Category.Rows[i]["Tên loại"].ToString() == cb_category.Text)
                 {
-                    product.Categoryid = dt_Category.Rows[i][1].ToString();
+                    product.Categoryid = dt_Category.Rows[i]["Mã loại"].ToString();
                     break;
                 }
             }
 
             for (int i = 0; i < dt_Color.Rows.Count; i++)
             {
-                if (dt_Color.Rows[i][2].ToString() == cb_color.Text)
+                if (dt_Color.Rows[i]["Tên màu"].ToString() == cb_color.Text)
                 {
-                    product.Colorid = dt_Color.Rows[i][1].ToString();
+                    product.Colorid = dt_Color.Rows[i]["Mã màu"].ToString();
                     break;
                 }
             }
 
             for (int i = 0; i < dt_Size.Rows.Count; i++)
             {
-                if (dt_Size.Rows[i][2].ToString() == cb_size.Text)
+                if (dt_Size.Rows[i]["Tên kích cỡ"].ToString() == cb_size.Text)
                 {
-                    product.Sizeid = dt_Size.Rows[i][1].ToString();
+                    product.Sizeid = dt_Size.Rows[i]["Mã kích cỡ"].ToString();
                     break;
                 }
             }
 
             for (int i = 0; i < dt_Brand.Rows.Count; i++)
             {
-                if (dt_Brand.Rows[i][2].ToString() == cb_brand.Text)
+                if (dt_Brand.Rows[i]["Tên hãng"].ToString() == cb_brand.Text)
                 {
-                    product.Brandid = dt_Brand.Rows[i][1].ToString();
+                    product.Brandid = dt_Brand.Rows[i]["Mã hãng"].ToString();
                     break;
                 }
             }

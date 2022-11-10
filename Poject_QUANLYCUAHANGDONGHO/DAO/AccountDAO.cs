@@ -53,7 +53,7 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
                     Username = data.Rows[0][0].ToString(),
                     Password = data.Rows[0][1].ToString(),
                     EmployeeID = data.Rows[0][2].ToString(),
-                    Active = Convert.ToInt32(data.Rows[0][3].ToString())
+                    Active = Convert.ToInt32(data.Rows[0][3])
                 };
                 return account;
             }
@@ -62,7 +62,7 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
                 return null;
             }
         }
-        
+
         //Show list account
         public DataTable ShowAccount()
         {

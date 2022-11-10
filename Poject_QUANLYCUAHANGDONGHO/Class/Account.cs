@@ -11,7 +11,7 @@ namespace Project_QUANLYCUAHANGDONGHO.Class
         private string username;
         private string password;
         private string employeeID;
-        private int active = 0;
+        private int active;
 
         public Account()
         {

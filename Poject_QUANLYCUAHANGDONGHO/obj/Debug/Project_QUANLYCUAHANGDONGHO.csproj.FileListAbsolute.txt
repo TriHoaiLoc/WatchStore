@@ -94,3 +94,4 @@ C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\o
 F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormEmployee.resources
 C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormInfo.resources
 C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormSales.resources
+C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormAccount.resources
