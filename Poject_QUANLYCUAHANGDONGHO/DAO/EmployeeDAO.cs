@@ -106,7 +106,8 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
         public DataTable GetPersonalInfo(string id)
         {
             string query = "SP_Get_PersonalInfo";
-            return conn.ExecuteReader(query);
+            SqlParameter[] sqlParameters = { new SqlParameter("@id", SqlDbType.NVarChar, 10) };
+            return conn.ExecuteReader(query, sqlParameters);
         }
 
 

@@ -38,7 +38,7 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
             string query = "SP_Pay"; //THANHTOAN
             SqlParameter[] parameters =
                {
-            new SqlParameter("@id", SqlDbType.NVarChar, 10) { Value = orderID } };
+            new SqlParameter("@ORDERID", SqlDbType.NVarChar, 10) { Value = orderID } };
             conn.ExecuteNonQuery(query, parameters);
         }
         public DataTable showAllOrder()

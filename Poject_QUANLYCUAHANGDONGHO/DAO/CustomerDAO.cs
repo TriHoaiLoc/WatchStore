@@ -61,7 +61,7 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
             string query = "SP_Get_Customer";
             SqlParameter[] parameters =
                 {
-                new SqlParameter("@ID", SqlDbType.NVarChar, 10) { Value = id},
+                new SqlParameter("@id", SqlDbType.NVarChar, 10) { Value = id},
                 };
             try
             {
@@ -86,7 +86,7 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
         public DataTable SearchCustomer(string phone)
         {
             string query = "SP_Search_Customer";
-            SqlParameter[] parameter = { new SqlParameter("@PHONE", SqlDbType.NVarChar, 20) { Value = phone } };
+            SqlParameter[] parameter = { new SqlParameter("@phone", SqlDbType.NVarChar, 20) { Value = phone } };
 
             return conn.ExecuteReader(query,parameter);
         }

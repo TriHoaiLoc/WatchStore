@@ -41,7 +41,7 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
             string query = "SP_Pay_Wait"; //THANHTOAN_TAMTHOI
             SqlParameter[] parameters =
              {
-            new SqlParameter("@ORDERID", SqlDbType.NVarChar, 10) { Value = orderID } };
+            new SqlParameter("@id", SqlDbType.NVarChar, 10) { Value = orderID } };
             return conn.ExecuteScalar(query, parameters);
         }
         
