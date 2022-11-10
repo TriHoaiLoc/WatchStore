@@ -61,7 +61,6 @@ namespace Project_QUANLYCUAHANGDONGHO
             formLogin = new FormLogin();
             formLogin.formMain = this;
             formLogin.ShowDialog();
-            MessageBox.Show(JobMain.JobName);
             if (JobMain.JobName == "Admin")
             {
                 MainEnabled();
@@ -93,10 +92,6 @@ namespace Project_QUANLYCUAHANGDONGHO
             txt_OrderID.Text=reader2.ToString();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-          
-        }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -125,6 +120,7 @@ namespace Project_QUANLYCUAHANGDONGHO
                 resetForm();
             }
         }
+
         public void resetForm()
         {
             dtg_OrderDetail.DataSource = null; 
@@ -198,6 +194,7 @@ namespace Project_QUANLYCUAHANGDONGHO
         private void thongTinCaNhanToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formInfo = new FormInfo();
+            formInfo.fmain = this;
             formInfo.ShowDialog();
         }
         //restart when logout

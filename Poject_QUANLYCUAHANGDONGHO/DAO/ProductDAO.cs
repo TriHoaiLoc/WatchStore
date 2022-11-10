@@ -26,7 +26,7 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
             string query = "SP_Add_Product"; //ADD_PRODUCT
             SqlParameter[] parameters =
               {
-            new SqlParameter("@NAME", SqlDbType.NVarChar, 10) { Value = product.Name },
+            new SqlParameter("@NAME", SqlDbType.NVarChar, 50) { Value = product.Name },
             new SqlParameter("@CATEGORYID", SqlDbType.NVarChar, 10) { Value = product.Categoryid },
             new SqlParameter("@QUANTITY", SqlDbType.Int, 10) { Value = product.Quantity },
             new SqlParameter("@PRICE", SqlDbType.Int, 10) { Value = product.Price },
@@ -43,7 +43,7 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
             SqlParameter[] parameters =
               {
             new SqlParameter("@PRODUCTID", SqlDbType.NVarChar, 10) { Value = product.Id },
-            new SqlParameter("@NAME", SqlDbType.NVarChar, 10) { Value = product.Name },
+            new SqlParameter("@NAME", SqlDbType.NVarChar, 50) { Value = product.Name },
             new SqlParameter("@CATEGORYID", SqlDbType.NVarChar, 10) { Value = product.Categoryid },
             new SqlParameter("@QUANTITY", SqlDbType.Int, 10) { Value = product.Quantity },
             new SqlParameter("@PRICE", SqlDbType.Int, 10) { Value = product.Price },

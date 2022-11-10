@@ -46,7 +46,6 @@ namespace Project_QUANLYCUAHANGDONGHO
             ComboColorLoad();
             ComboSizeLoad();
             ComboBrandLoad();
-            dataGridView2.DataSource = dt_Category;
         }
 
         public void ComboCategoryLoad()

@@ -45,5 +45,11 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
                 return null;
             }
         }
+
+        public DataTable ShowJob()
+        {
+            string query = "SP_Show_JOB";
+            return conn.ExecuteReader(query);
+        }
     }
 }

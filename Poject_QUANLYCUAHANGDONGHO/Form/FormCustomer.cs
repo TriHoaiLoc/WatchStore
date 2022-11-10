@@ -18,33 +18,39 @@ namespace Project_QUANLYCUAHANGDONGHO
     {
         private CustomerDAO customerDAO = new CustomerDAO();
         private Customer customer;
+        public DataGridViewRow ViewRow;
         public FormCustomer()
         {
             InitializeComponent();
-            
+
         }
         private void ShowCustomer()
         {
             dataGridView2.DataSource = customerDAO.ShowCustomer();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int i;
-            i = dataGridView2.CurrentRow.Index;
-            txtcusid.Text = dataGridView2.Rows[i].Cells[1].Value.ToString();
-            txtnamecus.Text = dataGridView2.Rows[i].Cells[2].Value.ToString();
-            comboxgendercus.Text = dataGridView2.Rows[i].Cells[3].Value.ToString();
-            txtaddrcus.Text = dataGridView2.Rows[i].Cells[4].Value.ToString();
-            txtphonecus.Text = dataGridView2.Rows[i].Cells[5].Value.ToString();
-            txtemailcus.Text = dataGridView2.Rows[i].Cells[6].Value.ToString();
-        }
-
         private void FormCustomer_Load(object sender, EventArgs e)
         {
             ShowCustomer();
+            LoadComboBox();
+            clearTextBox();
         }
-        
+        private void LoadComboBox()
+        {
+            comboxgendercus.Items.Add("Nam");
+            comboxgendercus.Items.Add("Nữ");
+            comboxgendercus.SelectedIndex = 0;
+            comboxgendercus.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void clearTextBox()
+        {
+            txtcusid.Text = string.Empty;
+            txtnamecus.Text = string.Empty;
+            txtaddrcus.Text = string.Empty;
+            txtemailcus.Text = string.Empty;
+            txtphonecus.Text = string.Empty;
+        }
         private void butaddcus_Click(object sender, EventArgs e)
         {
             customer = new Customer();
@@ -54,7 +60,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             customer.Phone = txtphonecus.Text;
             customer.Email = txtemailcus.Text;
             customerDAO.AddCustomer(customer);
-            ShowCustomer();
+            FormCustomer_Load(sender, e);
         }
 
         private void buteditcus_Click(object sender, EventArgs e)
@@ -67,20 +73,44 @@ namespace Project_QUANLYCUAHANGDONGHO
             customer.Phone = txtphonecus.Text;
             customer.Email = txtemailcus.Text;
             customerDAO.EditCustomer(customer);
-            ShowCustomer();
+            FormCustomer_Load(sender, e);
         }
 
         private void butdelcus_Click(object sender, EventArgs e)
         {
             customerDAO.DelCustomer(txtcusid.Text);
-            ShowCustomer();
+            FormCustomer_Load(sender, e);
         }
 
-        private void butsearchcus_Click(object sender, EventArgs e)
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView2.DataSource = customerDAO.SearchCustomer(textBox1.Text);
-           
-          
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    ViewRow = dataGridView2.Rows[e.RowIndex];
+                    txtcusid.Text = ViewRow.Cells["Mã khách hàng"].Value.ToString();
+                    txtnamecus.Text = ViewRow.Cells["Tên khách hàng"].Value.ToString();
+                    comboxgendercus.Text = ViewRow.Cells["Giới tính"].Value.ToString();
+                    txtaddrcus.Text = ViewRow.Cells["Địa chỉ"].Value.ToString();
+                    txtphonecus.Text = ViewRow.Cells["Số điện thoại"].Value.ToString();
+                    txtemailcus.Text = ViewRow.Cells["Email"].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void bt_Clear_Click(object sender, EventArgs e)
+        {
+            clearTextBox();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView2.DataSource = customerDAO.SearchCustomer(txtSearch.Text);
         }
     }
 }
