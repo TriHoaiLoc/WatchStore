@@ -31,7 +31,6 @@ C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\o
 C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.pdb
 C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormLogin.resources
 F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormAccount.resources
-F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormAdmin.resources
 F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormCustomer.resources
 F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormLogin.resources
 F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormOrder.resources
@@ -95,3 +94,5 @@ F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\o
 C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormInfo.resources
 C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormSales.resources
 C:\Users\Hl10a\OneDrive\Documents\GitHub\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormAccount.resources
+F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormInfo.resources
+F:\documentEighteenPlus\He quan tri CSDL\WatchStore\Poject_QUANLYCUAHANGDONGHO\obj\Debug\Project_QUANLYCUAHANGDONGHO.FormSales.resources

@@ -209,5 +209,20 @@ namespace Project_QUANLYCUAHANGDONGHO
             formOrder.ShowDialog();
         }
 
+        private void dtg_OrderDetail_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dtg_OrderDetail.Rows[e.RowIndex];
+                txt_IDproductDetail.Text = row.Cells["ProductID"].Value.ToString();
+            }
+        }
+
+        private void btn_deleteOrderDetails_Click(object sender, EventArgs e)
+        {
+            OrderDetailDAO orderDetailDAO = new OrderDetailDAO();
+            orderDetailDAO.deleteOrderdetails(txt_IDproductDetail.Text,txt_OrderID.Text);
+            dtg_OrderDetail.DataSource= orderDetailDAO.showOrderDetail(txt_OrderID.Text);
+        }
     }
 }

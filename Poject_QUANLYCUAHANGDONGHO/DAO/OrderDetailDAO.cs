@@ -44,6 +44,15 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
             new SqlParameter("@id", SqlDbType.NVarChar, 10) { Value = orderID } };
             return conn.ExecuteScalar(query, parameters);
         }
+        public void deleteOrderdetails(string productid ,string orderID)
+        {
+            string query = "SP_Delete_OrderDetail";
+            SqlParameter[] parameters =
+            {
+            new SqlParameter("@ORDERID", SqlDbType.NVarChar, 10) { Value = orderID },
+            new SqlParameter("@PRODUCTID", SqlDbType.NVarChar, 10) { Value = productid },};
+            conn.ExecuteNonQuery(query, parameters);
+        }
         
     }
 }
