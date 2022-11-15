@@ -71,9 +71,9 @@ namespace Project_QUANLYCUAHANGDONGHO
                     {
                         employeeDAO.EditEmployee(employee);
                         accountDAO.UpdateAccount(account);
-                    }    
-
+                    }
                     Application.Restart();
+
                 }
             }
         }

@@ -47,14 +47,17 @@ namespace Project_QUANLYCUAHANGDONGHO
             ProductDAO productDAO = new ProductDAO();
             dataGridView1.DataSource = productDAO.ShowProduct();
         }
+
         private void MainNoEnable()
         {
             adminToolStripMenuItem.Enabled = false;
         }
+
         private void MainEnabled()
         {
             adminToolStripMenuItem.Enabled = true;
         }
+
         private void FormMain_Load(object sender, EventArgs e)
         {
             MainNoEnable();

@@ -243,7 +243,7 @@ as
 	UPDATE Systems SET username = @username, passwd = @passwd, active = @active
 	WHERE EmployeeID = @empID
 GO
--- LẤY TÀI KHOẢN THEO ID
+-- LẤY TÀI KHOẢN THEO USERNAME/PASSWORD
 CREATE PROC SP_Get_Account 
 @username NVARCHAR(50), @passwd NVARCHAR(50)
 AS
@@ -253,10 +253,24 @@ BEGIN
 	SELECT * FROM Systems WHERE EmployeeID = @id
 END
 GO
+-- LẤY TÀI KHOẢN THEO ID
+CREATE PROC SP_Get_AccountByID
+@id NVARCHAR(10)
+AS
+BEGIN 
+	SELECT * FROM Systems WHERE EmployeeID = @id
+END
+GO
 -- SHOW DANH SÁCH TÀI KHOẢN
 CREATE PROC SP_Show_Account
 As
 	SELECT * FROM V_Show_AllAccounts
+GO
+--TÌM KIẾM TÀI KHOẢN THEO SỐ ĐIỆN THOẠI
+CREATE PROC SP_Search_Account
+@phone NVARCHAR(20)
+AS
+	SELECT * FROM V_Show_AllAcounts WHERE [Số điện thoại] LIKE "%" + @phone +"%"
 GO
 -----========== [ORDERS & ORDER DETAILS] ==========----- 
 -- TẠO HÓA ĐƠN

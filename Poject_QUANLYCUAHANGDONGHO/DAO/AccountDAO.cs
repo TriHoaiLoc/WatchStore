@@ -32,7 +32,7 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
                 };
             conn.ExecuteNonQuery(query, parameters);
         }
-        //get account
+        //get account by username/password
         public Account GetAccount(string username, string passwd)
         {
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(passwd))
@@ -62,12 +62,44 @@ namespace Project_QUANLYCUAHANGDONGHO.DAO
                 return null;
             }
         }
-
+        //get account by empid
+        public Account GetAccountByID(string id)
+        {
+            string query = "SP_Get_AccountByID";
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@id", SqlDbType.NVarChar, 10) {Value = id}
+            };
+            try
+            {
+                DataTable data = conn.ExecuteReader(query, parameters);
+                Account account = new Account
+                {
+                    Username = data.Rows[0][0].ToString(),
+                    Password = data.Rows[0][1].ToString(),
+                    EmployeeID = data.Rows[0][2].ToString(),
+                    Active = Convert.ToInt32(data.Rows[0][3])
+                };
+                return account;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         //Show list account
         public DataTable ShowAccount()
         {
             string query = "SP_Show_Account";
-            return conn.ExecuteReader(query, null);
+            return conn.ExecuteReader(query);
+        }
+
+        //Search account
+        public DataTable SearchAccount(string phone)
+        {
+            string query = "SP_Search_Account";
+            SqlParameter[] sqlParameters = { new SqlParameter("@phone", SqlDbType.NVarChar, 20) { Value = phone } };
+            return conn.ExecuteReader(query, sqlParameters);
         }
     }
 }

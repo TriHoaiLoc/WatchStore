@@ -182,9 +182,6 @@ namespace Project_QUANLYCUAHANGDONGHO
             // comboxgendercus
             // 
             this.comboxgendercus.FormattingEnabled = true;
-            this.comboxgendercus.Items.AddRange(new object[] {
-            "Nam",
-            "Nu"});
             this.comboxgendercus.Location = new System.Drawing.Point(151, 101);
             this.comboxgendercus.Margin = new System.Windows.Forms.Padding(2);
             this.comboxgendercus.Name = "comboxgendercus";
@@ -295,7 +292,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.Controls.Add(this.label1);
             this.Name = "FormCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Khách hàng";
+            this.Text = "Quản lý khách hàng";
             this.Load += new System.EventHandler(this.FormCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox1.ResumeLayout(false);

@@ -102,6 +102,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.tbPassReply.Name = "tbPassReply";
             this.tbPassReply.Size = new System.Drawing.Size(202, 31);
             this.tbPassReply.TabIndex = 152;
+            this.tbPassReply.UseSystemPasswordChar = true;
             // 
             // label10
             // 
@@ -124,6 +125,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.tbPasswd.ReadOnly = true;
             this.tbPasswd.Size = new System.Drawing.Size(202, 31);
             this.tbPasswd.TabIndex = 150;
+            this.tbPasswd.UseSystemPasswordChar = true;
             // 
             // label9
             // 
@@ -372,6 +374,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.tbPassNew.Name = "tbPassNew";
             this.tbPassNew.Size = new System.Drawing.Size(180, 31);
             this.tbPassNew.TabIndex = 155;
+            this.tbPassNew.UseSystemPasswordChar = true;
             // 
             // btCancel
             // 

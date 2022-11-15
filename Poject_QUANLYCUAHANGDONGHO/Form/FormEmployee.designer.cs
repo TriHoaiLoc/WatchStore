@@ -337,7 +337,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhân viên";
+            this.Text = "Quản lý nhân viên";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

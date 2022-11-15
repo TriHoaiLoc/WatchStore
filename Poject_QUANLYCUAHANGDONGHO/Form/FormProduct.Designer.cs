@@ -365,7 +365,7 @@
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "FormProduct";
-            this.Text = "FormProduct";
+            this.Text = "Quản lý Sản phẩm";
             this.tabControl1.ResumeLayout(false);
             this.listTab.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
