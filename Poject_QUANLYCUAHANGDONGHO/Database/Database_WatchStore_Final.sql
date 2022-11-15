@@ -268,9 +268,9 @@ As
 GO
 --TÌM KIẾM TÀI KHOẢN THEO SỐ ĐIỆN THOẠI
 CREATE PROC SP_Search_Account
-@phone NVARCHAR(20)
+@phone NVARCHAR(50)
 AS
-	SELECT * FROM V_Show_AllAcounts WHERE [Số điện thoại] LIKE "%" + @phone +"%"
+	SELECT * FROM V_Show_AllAccounts WHERE [Số điện thoại] LIKE N'%' + @phone +'%'
 GO
 -----========== [ORDERS & ORDER DETAILS] ==========----- 
 -- TẠO HÓA ĐƠN
