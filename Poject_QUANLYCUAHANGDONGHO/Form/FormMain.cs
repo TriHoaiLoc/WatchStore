@@ -72,7 +72,7 @@ namespace Project_QUANLYCUAHANGDONGHO
             {
                 MainNoEnable();
             }
-            if(AccountMain != null) 
+            if(EmployeeMain != null) 
                 txt_empId.Text = employeeMain.Name;
             ShowProduct();
             loadAllComboBox();
